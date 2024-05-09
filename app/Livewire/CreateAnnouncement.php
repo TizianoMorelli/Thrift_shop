@@ -6,7 +6,7 @@ use App\Models\Announcement;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
-class CreateAnnoucement extends Component
+class CreateAnnouncement extends Component
 {
     #[Validate('required|min:5')] 
     public $title;
@@ -41,6 +41,6 @@ class CreateAnnoucement extends Component
 
     public function render()
     {
-        return view('livewire.create-annoucement');
+        return view('livewire.create-announcement');
     }
 }
