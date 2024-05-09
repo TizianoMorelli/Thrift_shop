@@ -6,7 +6,7 @@ use App\Models\Announcement;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
-class CreateAnnouncement extends Component
+class CreateAnnoucement extends Component
 {
     #[Validate('required|min:5')] 
     public $title;
