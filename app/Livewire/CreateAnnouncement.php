@@ -3,21 +3,25 @@
 namespace App\Livewire;
 
 use App\Models\Announcement;
+use App\Models\Category;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
 class CreateAnnouncement extends Component
 {
-    #[Validate('required|min:5')] 
+    #[Validate('required|min:5')]
     public $title;
-    #[Validate('required|min:5')] 
+    #[Validate('required|min:5')]
     public $subtitle;
-    #[Validate('required|min:5')] 
+    #[Validate('required|min:5')]
     public $body;
-    #[Validate('required')] 
+    #[Validate('required')]
     public $price;
+    #[Validate('required')]
+    public $category;
 
-    public function store(){
+    public function store()
+    { 
 
         $this->validate();
 
@@ -27,6 +31,7 @@ class CreateAnnouncement extends Component
             'subtitle' => $this->subtitle,
             'body' => $this->body,
             'price' => $this->price,
+            'category_id' => $this->category,
 
         ]);
 
@@ -34,13 +39,13 @@ class CreateAnnouncement extends Component
         $this->reset();
 
         session()->flash('message', 'Articolo creato correttamente');
-
-
     }
 
 
     public function render()
     {
-        return view('livewire.create-announcement');
+        $categories = Category::all();
+
+        return view('livewire.create-announcement', compact('categories'));
     }
 }
