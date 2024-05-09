@@ -8,7 +8,7 @@
 
 
 
-            <form class="shadow p-5 rounded-3 bg-secondary" wire:submit="store">
+            <form class="shadow p-5 rounded-3 bg-dark text-white" wire:submit="store">
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo Articolo</label>
@@ -36,15 +36,13 @@
                     </div>
                 </div>
 
-
-                <div>
-                    <label for="category">Categoria:</label>
-                    <select wire:model="category">
+                <div class="mb-3">
+                    <select wire:model="category" class="form-select" aria-label="Default select example">
+                        <option selected>Categoria</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
-                    @error('category') <span class="error">{{ $message }}</span> @enderror
                 </div>
 
 
