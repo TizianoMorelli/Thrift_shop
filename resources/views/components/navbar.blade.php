@@ -23,8 +23,8 @@
               </a>            
               <ul class="dropdown-menu dropdown-menu-end">
                 @guest
-                <li><a class="blackLink siteLink dropdown-item" href="{{route('register')}}">Registrati</a></li>
-                <li><a class="blackLink siteLink dropdown-item" href="{{route('login')}}">Accedi</a></li>
+                <li><a class=" dropdown-item" href="{{route('register')}}">Registrati</a></li>
+                <li><a class="dropdown-item" href="{{route('login')}}">Accedi</a></li>
                 @endguest
                 @auth
                 <li>
