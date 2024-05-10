@@ -28,26 +28,30 @@ class CreateAnnouncement extends Component
     public $img;
 
     public function store()
-    { 
+    {
 
         $this->validate();
 
-        Announcement::create([
+        if ($this->category == 'NULL') {
+            session()->flash('message', 'Scegli categoria');
+        } else {
+            // dd($this->category);
 
-            'title' => $this->title,
-            'subtitle' => $this->subtitle,
-            'body' => $this->body,
-            'price' => $this->price,
-            'category_id' => $this->category,
-            'user_id' => Auth::user()->id,
-            'img' => $this->img ? $this->img->store("public") : '/default-image.jpg',
+            Announcement::create([
 
-        ]);
+                'title' => $this->title,
+                'subtitle' => $this->subtitle,
+                'body' => $this->body,
+                'price' => $this->price,
+                'category_id' => $this->category,
+                'user_id' => Auth::user()->id,
+                'img' => $this->img ? $this->img->store("public") : '/default-image.jpg',
 
+            ]);
+            $this->reset();
 
-        $this->reset();
-
-        session()->flash('message', 'Articolo creato correttamente');
+            session()->flash('message', 'Articolo creato correttamente');
+        }
     }
 
 

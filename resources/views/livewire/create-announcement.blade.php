@@ -37,12 +37,20 @@
                 </div>
 
                 <div class="mb-3">
-                    <select wire:model="category" class="form-select" aria-label="Default select example">
-                        <option selected>Categoria</option>
+                    <select required wire:model="category" class="form-select" aria-label="Default select example">
+                        <option value="" selected>Categoria</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
+                        {{-- @if ($category = 0)
+                            <p>Non va bene</p>
+                        @endif --}}
                     </select>
+                    <div class="text-danger fw-bold ">
+                        @error('category')
+                            {{ $message }}
+                        @enderror
+                    </div>
                 </div>
                 <label for="formFileSm" class="form-label">Allega un immagine</label>
                     <input class="form-control form-control-sm" id="formFileSm" type="file" wire:model="img" >
