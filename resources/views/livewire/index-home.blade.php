@@ -4,6 +4,7 @@
     <div class="container my-5">
         <div class="row d-flex">
             @foreach ( $announcements as $announcement )
+            @if($loop->iteration <= 7)
             <div class="col-12 col-md-6">
                 {{-- @dd($announcements) --}}
                 <div class="card my-5">
@@ -17,6 +18,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
         </div>
     </div>
