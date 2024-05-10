@@ -1,9 +1,9 @@
-<div class="container">
-    <div class="row">
+<div class="container my-5">
+    <div class="row d-flex">
         <div class="col-12 col-md-6">
             {{-- @dd($announcements) --}}
             @foreach ( $announcements as $announcement )
-                <div class="card" style="width: 18rem;">
+                <div class="card my-5">
                     <img src="..." class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">{{ $announcement->title }}</h5>
