@@ -44,7 +44,8 @@
                         @endforeach
                     </select>
                 </div>
-
+                <label for="formFileSm" class="form-label">Allega un immagine</label>
+                    <input class="form-control form-control-sm" id="formFileSm" type="file" wire:model="img" >
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo Articolo</label>
@@ -53,7 +54,7 @@
                         @error('price')
                             {{ $message }}
                         @enderror
-                    </div>
+                </div>
                 </div>
                 <button type="submit" class="btn btn-warning">Crea Articolo</button>
             </form>

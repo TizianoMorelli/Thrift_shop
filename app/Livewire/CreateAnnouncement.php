@@ -7,9 +7,13 @@ use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
+
 
 class CreateAnnouncement extends Component
 {
+    use WithFileUploads;
+
     #[Validate('required|min:5')]
     public $title;
     #[Validate('required|min:5')]
@@ -20,6 +24,8 @@ class CreateAnnouncement extends Component
     public $price;
     #[Validate('required')]
     public $category;
+
+    public $img;
 
     public function store()
     { 
@@ -34,6 +40,7 @@ class CreateAnnouncement extends Component
             'price' => $this->price,
             'category_id' => $this->category,
             'user_id' => Auth::user()->id,
+            'img' => $this->img ? $this->img->store("public") : '/default-image.jpg',
 
         ]);
 

@@ -17,6 +17,7 @@ class Announcement extends Model
         'user_id',
         'price',
         'category_id',
+        'img'
 
     ];
 
