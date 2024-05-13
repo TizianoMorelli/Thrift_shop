@@ -16,7 +16,7 @@ class IndexHome extends Component
         // $announcements = DB::table('announcements')->max('updated_at');
 
         // $announcements = Announcement::select() -> orderByDesc('updated_at')->get();
-        $announcements = Announcement::orderBy('updated_at','desc')->take(6)->get();
+        $announcements = Announcement::orderBy('updated_at','desc')->take(4)->get();
 
         $categories = Category::all();
         

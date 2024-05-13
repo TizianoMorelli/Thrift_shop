@@ -1,4 +1,4 @@
-<div id="carouselExample" class="carousel slide">
+<div id="carouselExample" class="carousel slide shadow">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="https://picsum.photos/1200/1600" class="d-block w-100" alt="..." height="500px">
