@@ -16,6 +16,8 @@
 
 @import './category.css';
 
+@import './standard.css';
+
 .padding {
     padding-top: 80px;
 }

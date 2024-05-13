@@ -18,7 +18,7 @@
                     <div class="col-12 d-flex justify-content-center">
                         
                         @auth
-                        <a href="{{route('announcement.create')}}" class="btn btn-category mt-4">Crea Annuncio</a>
+                        <a href="{{route('announcement.create')}}" class="btn btn-category mt-4 btn_standard">Crea Annuncio</a>
                         @endauth
                     </div>
                 </div>

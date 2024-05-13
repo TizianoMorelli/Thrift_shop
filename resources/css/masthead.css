@@ -11,27 +11,14 @@
   
 }
 
-
-.btn-masthead{
-  
-  background-color: var(--color-A);
-  
-}
-
-.btn-masthead:hover {
-  background-color: var(--color-S);
-  
-}
-
 .title-masthead{
   position: relative;
   
 }
 .title-masthead::before{
-
   content: "";
   position: absolute;
-  bottom: -60%;
+  bottom: -100%;
   left: 32%;
   width:30%;
   height: 6px;

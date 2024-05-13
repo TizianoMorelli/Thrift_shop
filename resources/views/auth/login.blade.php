@@ -18,16 +18,16 @@
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Indirizzo Email</label>
-                        <input type="email" name="email" class="form-control" id="email"
+                        <input type="email" name="email" class="form-control input_focused" id="email"
                             aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password">
+                        <input type="password" name="password" class="form-control input_focused" id="password">
                     </div>
 
                     <div class="d-flex justify-content-between">
-                        <button type="submit" class="btn btn-primary">Accedi</button>
+                        <button type="submit" class="btn btn-primary btn_standard">Accedi</button>
                         <p class="pt-2">
                           Non sei registrato? 
                           <a href="{{route('register')}}"> Registati</a>
