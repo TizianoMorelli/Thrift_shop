@@ -2,13 +2,13 @@
 
 
 
-<div class="container my-5 ">
+<div class="container-fluid py-5 rounded my-5">
     <div class="row justify-content-center ">
         <div class="col-12 col-md-6">
 
 
-
-            <form class="shadow p-5 rounded-3 bg-dark text-white" wire:submit="store">
+            <h1 class="text-center mb-2">Inserisci un annuncio</h1>
+            <form class="shadow p-5 rounded-3  text-white form" wire:submit="store">
 
                 <div class="mb-3">
                     <label for="title" class="form-label">Titolo Articolo</label>
@@ -52,8 +52,11 @@
                         @enderror
                     </div>
                 </div>
-                <label for="formFileSm" class="form-label">Allega un immagine</label>
-                    <input class="form-control form-control-sm" id="formFileSm" type="file" wire:model="img" >
+                <div class="mb-3">
+
+                    <label for="formFileSm" class="form-label">Allega un immagine</label>
+                    <input class="form-control form-control-sm" id="formFileSm" type="file" wire:model="img">
+                </div>
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo Articolo</label>
@@ -62,9 +65,9 @@
                         @error('price')
                             {{ $message }}
                         @enderror
+                    </div>
                 </div>
-                </div>
-                <button type="submit" class="btn btn-warning">Crea Articolo</button>
+                <button type="submit" class="btn">Crea Articolo</button>
             </form>
             <x-display-message />
         </div>

@@ -1,11 +1,11 @@
 <x-layout>
     <x-display-error/>
     <div class="container my-5">
-        <div class="row">
-            <div class="col">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
               <h1 class="mb-3">Registrati a presto.it</h1>
                 <form
-                class="bg-secondary rounded-3 p-3 text-white"
+                class=" rounded-3 p-3 form"
                 method="POST"
                 action="{{route('register')}}"
                 >

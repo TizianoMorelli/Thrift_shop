@@ -12,3 +12,12 @@
 
 @import'./palette.css';
 
+@import './form.css';
+
+.padding {
+    padding-top: 80px;
+}
+
+.padding2 {
+    padding-top: 300px;
+}

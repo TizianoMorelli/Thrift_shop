@@ -1,4 +1,4 @@
-<div class="container-fluid px-0">
+<div class="container-fluid px-0 footer">
     <footer class="py-5">
       <div class="row m-0">
         <div class="col-6 col-md-2 mb-3 px-5">

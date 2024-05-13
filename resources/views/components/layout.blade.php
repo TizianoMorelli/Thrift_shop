@@ -15,7 +15,12 @@
     <x-navbar
 
     />
+    <div class="padding">
+    </div>
     {{$slot}}
+    <div class="padding2">
+
+    </div>
     <x-footer/>
 </body>
 </html>
