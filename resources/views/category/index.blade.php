@@ -1,6 +1,6 @@
 <x-layout>
     
-    <div class="container my-5">
+    <div class="container my-5 box-category">
         <div class="row d-flex">
             @forelse ($category->announcements as $announcement)
             <x-card-announcement
