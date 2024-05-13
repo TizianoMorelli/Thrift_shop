@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container my-5">
+    <div class="container box-show my-5">
         <div class="row d-flex justify-content-center">
             <div class="col-12 text-center my-5">
                 <h1>{{$announcement->title}}</h1>
