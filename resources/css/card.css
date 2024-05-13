@@ -1,0 +1,33 @@
+.card_announcement {
+    min-width: 250px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 0%;
+    border: none !important;
+}
+
+.title_card {
+    color: var(--color-P);
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.img_card {
+    
+}
+
+.card_category{
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    color: var(--color-A);
+}
+
+.card-img-top{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 12px 0 rgba(0, 0, 0, 0.19) !important;
+    
+}
+
+.card {
+    background-color: transparent !important;
+}

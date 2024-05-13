@@ -239,3 +239,46 @@ Tag per richiamare un componente:
 
 
     Prova modifica
+
+
+
+
+    Palette colori
+
+    
+
+    /* CSS HEX */
+--oxford-blue: #102542ff;
+--glaucous: #6184d8ff;
+--verdigris: #50c5b7ff;
+
+/* CSS HSL */
+--oxford-blue: hsla(215, 61%, 16%, 1);
+--glaucous: hsla(222, 60%, 61%, 1);
+--verdigris: hsla(173, 50%, 54%, 1);
+
+/* SCSS HEX */
+$oxford-blue: #102542ff;
+$glaucous: #6184d8ff;
+$verdigris: #50c5b7ff;
+
+/* SCSS HSL */
+$oxford-blue: hsla(215, 61%, 16%, 1);
+$glaucous: hsla(222, 60%, 61%, 1);
+$verdigris: hsla(173, 50%, 54%, 1);
+
+/* SCSS RGB */
+$oxford-blue: rgba(16, 37, 66, 1);
+$glaucous: rgba(97, 132, 216, 1);
+$verdigris: rgba(80, 197, 183, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-right: linear-gradient(90deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-bottom: linear-gradient(180deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-left: linear-gradient(270deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-top-right: linear-gradient(45deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-bottom-right: linear-gradient(135deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-top-left: linear-gradient(225deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-bottom-left: linear-gradient(315deg, #102542ff, #6184d8ff, #50c5b7ff);
+$gradient-radial: radial-gradient(#102542ff, #6184d8ff, #50c5b7ff);
