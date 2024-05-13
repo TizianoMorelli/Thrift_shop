@@ -3,7 +3,7 @@
     <div class="container my-5 box-category">
         <div class="row d-flex">
             @forelse ($category->announcements as $announcement)
-            <x-card-announcement
+            <x-card
             :$announcement
             />
             @empty
