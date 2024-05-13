@@ -1,11 +1,44 @@
 .masthead {
-    height: 60vh;
-    min-height: 500px;
-    background-image: url('/public/storage/media/header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* margin-top: 80px; */
-    background-attachment: fixed;
+  margin-bottom: 150px;
+  height: 60vh;
+  min-height: 500px;
+  background-image: url('/public/storage/media/header.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* margin-top: 80px; */
+  background-attachment: fixed;
   
-  }
+}
+
+
+.btn-masthead{
+  
+  background-color: var(--color-A);
+  
+}
+
+.btn-masthead:hover {
+  background-color: var(--color-S);
+  
+}
+
+.title-masthead{
+  position: relative;
+  
+}
+.title-masthead::before{
+
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width:40%;
+  height: 4px;
+  background:var(--color-A);
+  transition: .5s;
+}
+
+/* .title-masthead:hover:before{
+width: 100%;
+} */

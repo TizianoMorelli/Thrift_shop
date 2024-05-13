@@ -1,6 +1,6 @@
 
 
-<div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-xxl-2">
+<div class="col-12 col-md-6 col-lg-4">
     {{-- @dd($announcements) --}}
     <div class="card card_announcement my-5">
         <a class="img_card" href="{{route('announcement.show', compact('announcement'))}}">

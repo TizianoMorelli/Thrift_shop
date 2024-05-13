@@ -1,9 +1,18 @@
 <x-layout>
     <x-display-error/>
-    <div class="container my-5">
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
+          <h1 class="mb-3">Registrati a THRIFT SHOP</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container box-auth my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6">
-              <h1 class="mb-3">Registrati a presto.it</h1>
+             
                 <form
                 class=" rounded-3 p-3 form"
                 method="POST"

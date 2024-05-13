@@ -5,7 +5,7 @@
           <h2 class=" my-2">È arrivato il momento di liberare l’armadio!
           </h2>
 
-          <a class="btn btn-success py-2 w-100 my-2" href="{{route('announcement.create')}}" >Vendi subito</a>
+          <a class="btn btn-masthead py-2 w-100 my-2" href="{{route('announcement.create')}}" >Vendi subito</a>
          
         </div>
       </div>

@@ -1,9 +1,16 @@
 <x-layout>
 
-    <h1 class="text-center fw-bold my-5">Effettua l'accesso per inserire un annuncio</h1>
+ <div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center fw-bold mt-5 ">Effettua l'accesso per inserire un annuncio</h1>
+        </div>
+    </div>
+ </div>
 
     <x-display-error />
-    <div class="container my-5">
+
+    <div class="container box-auth my-5">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-md-6">
                 <h1 class="my-5 text-center">Accedi a THRIFT SHOP</h1>

@@ -14,10 +14,17 @@
 
 @import './form.css';
 
+@import './category.css';
+
 .padding {
     padding-top: 80px;
 }
 
 .padding2 {
     padding-top: 300px;
+}
+
+.box-auth{
+
+    margin-bottom: 40% !important;
 }
