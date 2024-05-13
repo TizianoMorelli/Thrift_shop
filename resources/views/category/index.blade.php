@@ -1,7 +1,7 @@
 <x-layout>
     
     <div class="container my-5 box-category">
-        <div class="row d-flex">
+        <div class="row d-flex justify-content-center p-5">
             @forelse ($category->announcements as $announcement)
             <x-card
             :$announcement
@@ -23,9 +23,6 @@
                     </div>
                 </div>
             </div>
-            
-            {{-- da sistemare assolutamente il frontend  --}}
-            
             
             @endforelse
             
