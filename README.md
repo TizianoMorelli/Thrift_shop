@@ -282,3 +282,15 @@ $gradient-bottom-right: linear-gradient(135deg, #102542ff, #6184d8ff, #50c5b7ff)
 $gradient-top-left: linear-gradient(225deg, #102542ff, #6184d8ff, #50c5b7ff);
 $gradient-bottom-left: linear-gradient(315deg, #102542ff, #6184d8ff, #50c5b7ff);
 $gradient-radial: radial-gradient(#102542ff, #6184d8ff, #50c5b7ff);
+
+## Commit Dorian 13/05/2024 23:52
+git commit -m "varie modifiche frontend: effetti hover, form, riordinamento codice, ecc. per dettagli vedere readme"
+- sistemato pulsante "crea annuncio" nella navbar (non cambiava colore quando "active" e utente non loggato)
+- sistemato bordo pulsante form accedi (quando non hoverato il bordo è blu)
+- modificato pulsante menu collapsed
+- sistemato colore testo pulsante menu, subscribe footer
+- creato file standard.css dove mettere tutte le classi dei componenti standard
+- aggiunto transizioni su vari elementi
+- creato standard e ordinato titoli pagina
+- inserito categorie nel footer come da template
+- sistemato form con colori della palette
