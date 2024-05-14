@@ -5,7 +5,10 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AnnouncementController;
 
+// PublicController 
 Route::get('/', [PublicController::class, 'home'])->name('home');
+
+Route::get('/announcement/search', [AnnouncementController::class, 'searchAnnouncements'])->name('announcement.search');
 
 // AnnouncementController 
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create')->middleware('auth');

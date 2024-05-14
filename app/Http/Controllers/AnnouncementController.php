@@ -21,4 +21,11 @@ class AnnouncementController extends Controller
 
         return view('announcement.show', compact('announcement'));
     }
+
+    public function searchAnnouncements(Request $request) {
+        $announcements = Announcement::search($request->searched)->get();
+        //  dd($announcements);
+        // $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        return view('announcement.search', compact('announcements'));        
+    }
 }

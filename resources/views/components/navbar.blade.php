@@ -3,16 +3,16 @@
         <a class="navbar-brand" href="{{ route('home') }}">
             <img class="logo_navbar" src="{{ Storage::url('public/logo/logo.png') }}" alt="">
         </a>
-        <button class="navbar-toggler navbar_toggler_focused " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar_toggler_focused " type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class=" "><i class="bi bi-view-list"></i></span>
         </button>
         <div class="collapse justify-content-center navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
 
                 <li class="nav-item">
-                    <a class="nav-link transition_03 @if (Route::currentRouteName() == 'home') active @endif" aria-current="page"
-                        href="{{ route('home') }}">Home</a>
+                    <a class="nav-link transition_03 @if (Route::currentRouteName() == 'home') active @endif"
+                        aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -25,9 +25,20 @@
                         href="{{ route('announcement.create') }}">Crea annuncio</a>
                 </li>
 
+
+
+                <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
+                    <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Cerca</button>
+                </form>
+
+
+
+
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link transition_03 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link transition_03 dropdown-toggle" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Categorie
                     </a>
                     <ul class="dropdown-menu">
@@ -55,10 +66,10 @@
                                     <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
                                 @endguest
                                 @auth
-                                    <li >
+                                    <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            <button class="dropdown-item" type="submit">Logout 
+                                            <button class="dropdown-item" type="submit">Logout
                                                 <i class="bi bi-box-arrow-right px-2"></i></button>
                                         </form>
                                     </li>
@@ -104,4 +115,3 @@
     </div>
     </div>
 </nav>
-

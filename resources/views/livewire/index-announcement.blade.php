@@ -1,4 +1,3 @@
-
 <div>
     <div class="container mt-5">
         <div class="row">
@@ -10,13 +9,12 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container-fluid my-5">
         <div class="row d-flex justify-content-evenly">
+            {{-- @dd($announcements) --}}
             @foreach ($announcements as $announcement)
-                <x-card
-                :$announcement
-                />
+                <x-card :$announcement />
             @endforeach
         </div>
     </div>
