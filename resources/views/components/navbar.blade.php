@@ -27,12 +27,9 @@
 
 
 
-                <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                    <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Cerca</button>
-                </form>
+            
 
-
+  
 
 
 
@@ -53,6 +50,26 @@
 
                     </ul>
                 </li>
+
+                <li class="nav-item">
+                    @if (Auth::user() && Auth::user()->is_revisor)
+                    <a href="{{route('revisor.index')}}" class="btn btn_standard">
+                      Zona Revisor
+                      {{-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        {{App\Models\Announcement::toBeRevisionedCount()}}
+                      </span> --}}
+                    </a>
+                    @endif
+                </li>
+
+
+              <li class="nav-item ps-5">
+                <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
+                    <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Cerca</button>
+                </form>
+              </li>
+
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown end-0">

@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container m-5">
         <div class="row justify-content-center ">
-            <div class="col-12 col-6">
+            <div class="col-12 d-flex justify-content-center">
                 <h2 class="text-center">
                     {{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}
                 </h2>
@@ -12,7 +12,7 @@
     {{-- @dd($announcement_to_check) --}}
     <div class="container my-5">
         <div class="row justify-content-center ">
-            <div class="col-10">
+            <div class="col-5 ">
                 <div class="card mb-3">
                     <img src="{{Storage::url($announcement_to_check->img)}}" class="card-img-top" alt="...">
                     <div class="card-body">
