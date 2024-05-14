@@ -25,7 +25,7 @@
                         <div class="row">
                             <div class="col-6">
                                 <form
-                                action="{{route('revisor.accept_announcement', ['announcement_to_check'])}}" method="POST">
+                                action="{{route('revisor.accept_announcement', ['announcement'=>$announcement_to_check])}}" method="POST">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-success">
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-6">
                                 <form
-                                action="{{route('revisor.reject_announcement', ['announcement_to_check'])}}" method="POST">
+                                action="{{route('revisor.reject_announcement', ['announcement'=>$announcement_to_check])}}" method="POST">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-success">
