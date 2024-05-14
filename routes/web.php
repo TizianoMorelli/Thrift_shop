@@ -21,4 +21,9 @@ Route::get('category/index/{category}', [CategoryController::class, 'index'])->n
 // RevisorController
 Route::get('revisor/home', [RevisorController::class, 'index'])->name('revisor.index');
 
+Route::patch('accetta/annuncio/{announcement_to_check}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
+
+Route::patch('rifiuta/annuncio/{announcement_to_check}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+
+
 

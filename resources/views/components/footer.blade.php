@@ -38,12 +38,12 @@
         <p>© 2024 THRIFT SHOP, Inc. All rights reserved.</p>
       </div>
 
-      @if (Auth::user()->is_revisor)
-      <a href="{{route(revisor.index)}}" class="btn btn_standard">
+      @if (Auth::user() && Auth::user()->is_revisor)
+      <a href="{{route('revisor.index')}}" class="btn btn_standard">
         Zona Revisor
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {{App/Model/Announcement::toBeRevisionedCount()}}
-        </span>
+        {{-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{App\Models\Announcement::toBeRevisionedCount()}}
+        </span> --}}
       </a>
       @endif
 
