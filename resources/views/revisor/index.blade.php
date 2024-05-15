@@ -51,4 +51,12 @@
         </div>
     </div>        
     @endif
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <a class="btn btn_standard text-center text-decoration-none" href="{{route('revisor.revise')}}">VAI ALLA PAGINA DI REVISIONE</a>
+            </div>
+        </div>
+    </div>
 </x-layout>
