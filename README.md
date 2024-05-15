@@ -294,3 +294,14 @@ git commit -m "varie modifiche frontend: effetti hover, form, riordinamento codi
 - creato standard e ordinato titoli pagina
 - inserito categorie nel footer come da template
 - sistemato form con colori della palette
+
+# Laravel Scout
+Ricerca multi-parametro
+
+[Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/11.x/scout)
+
+- Aggiungere nel file .env: SCOUT_DRIVER=tntsearch 
+- lanciare il comando: composer require laravel/scout
+- lanciare il comando: php artisan scout:flush "App\Models\Announcement"
+- lanciare il comando: php artisan scout:import "App\Models\Announcement"
+- nel .gitignore commentare: /public/storage | inserire: /storage/*.index

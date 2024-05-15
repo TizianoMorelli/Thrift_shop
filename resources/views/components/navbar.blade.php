@@ -66,7 +66,7 @@
               <li class="nav-item ps-5">
                 <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
                     <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Cerca</button>
+                    <button class="btn btn-outline-success btn_standard" type="submit">Cerca</button>
                 </form>
               </li>
 
