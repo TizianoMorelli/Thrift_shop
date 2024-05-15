@@ -22,7 +22,7 @@
                     @foreach ($categories as $category)
                         <li class="nav-item mb-2"><a href="#"
                                 class="nav-link p-0 text-body-secondary">{{ ucfirst($category->name) }}
-                                ({{ $category->announcements->count() }})</a></li>
+                                ({{ $category->announcements->where('is_accepted', true)->count() }})</a></li>
                     @endforeach
                 </ul>
             </div>
