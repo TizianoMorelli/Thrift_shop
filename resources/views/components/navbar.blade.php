@@ -53,11 +53,11 @@
 
                 <li class="nav-item">
                     @if (Auth::user() && Auth::user()->is_revisor)
-                    <a href="{{route('revisor.home')}}" class="btn btn_standard">
+                    <a href="{{route('revisor.home')}}" class="btn btn_standard position-relative">
                       Zona Revisor
-                      {{-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{App\Models\Announcement::toBeRevisionedCount()}}
-                      </span> --}}
+                      </span>
                     </a>
                     @endif
                 </li>
