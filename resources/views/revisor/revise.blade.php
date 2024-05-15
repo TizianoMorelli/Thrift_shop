@@ -2,7 +2,7 @@
     <div class="container m-5">
         <div class="row justify-content-center ">
             <div class="col-12 d-flex justify-content-center">
-                <h2 class="text-center">
+                <h2 class="text-center title-page">
                     {{$announcements_to_revise ? 'Ecco gli annunci già revisionati' : 'Non ci sono annunci revisionati'}}
                 </h2>
             </div>
@@ -12,10 +12,10 @@
     
     {{-- @dd($announcements_to_revise) --}}
     
-    <div class="container my-5">
+    <div class="container my-5 box-revisione">
         <div class="row justify-content-center ">
             @foreach ($announcements_to_revise as $announcement )
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4 col-lg-3">
                 <div class="card mb-3">
                     <img src="{{Storage::url($announcement->img)}}" class="card-img-top" alt="...">
                     <div class="card-body">

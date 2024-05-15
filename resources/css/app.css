@@ -18,25 +18,5 @@
 
 @import './standard.css';
 
-.padding {
-    padding-top: 80px;
-}
+@import './search.css';
 
-.padding2 {
-    padding-top: 300px;
-}
-
-.box-auth{
-
-    margin-bottom: 40% !important;
-}
-
-.box-category{
-
-    margin-bottom: 40% !important;
-}
-
-.box-show{
-
-    margin-bottom: 20% !important;
-}
