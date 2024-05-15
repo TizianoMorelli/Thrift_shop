@@ -61,15 +61,6 @@
                     @endif
                 </li>
 
-
-              <li class="nav-item ps-5">
-                <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                    <input name="searched" class="form-control form-control-sm  me-2" type="search" placeholder="Es. Vestiti ..." aria-label="Search">
-                    <button class="btn btn-outline-success btn_standard" type="submit">Cerca</button>
-                </form>
-              </li>
-              
-
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
                         <li class="nav-item w-50 my-3">
@@ -111,7 +102,7 @@
             <ul class="navbar-nav justify-content-end d-flex">
                 <li class="nav-item align-items-center d-flex   ps-lg-5 my-2 my-md-0">
                     <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                        <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input name="searched" class="form-control me-2" type="search" placeholder="Es. Vestiti ..." aria-label="Search">
                         <button class="btn btn-outline-success btn_standard" type="submit">Cerca</button>
                     </form>
                   </li>
