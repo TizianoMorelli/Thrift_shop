@@ -305,3 +305,8 @@ Ricerca multi-parametro
 - lanciare il comando: php artisan scout:flush "App\Models\Announcement"
 - lanciare il comando: php artisan scout:import "App\Models\Announcement"
 - nel .gitignore commentare: /public/storage | inserire: /storage/*.index
+
+
+SEEDER
+email: admin@thriftshop.it
+password: 12345678
