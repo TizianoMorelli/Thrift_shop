@@ -12,7 +12,7 @@
     {{-- @dd($announcement_to_check) --}}
     <div class="container my-5">
         <div class="row justify-content-center ">
-            <div class="col-5 ">
+            <div class="col-5">
                 <div class="card mb-3">
                     <img src="{{Storage::url($announcement_to_check->img)}}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -54,8 +54,8 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12">
-                <a class="btn btn_standard text-center text-decoration-none" href="{{route('revisor.revise')}}">VAI ALLA PAGINA DI REVISIONE</a>
+            <div class="col-12 d-flex justify-content-center">
+                <a class="btn btn_standard text-center text-decoration-none" href="{{route('revisor.index')}}">VEDI REVISIONATI</a>
             </div>
         </div>
     </div>

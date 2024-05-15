@@ -18,7 +18,7 @@ class RevisorController extends Controller
     return view('revisor.index',compact('announcement_to_check'));
    }
 
-   public function reviseAnnouncements(){
+   public function reviseIndex(){
     $announcements_to_revise = Announcement::whereNotNull('is_accepted')->get();
    //  $announcement_to_revise = DB::table('announcements')->whereNotNull('is_accepted')->get();
    //  dd($announcement_to_revise);
@@ -45,4 +45,8 @@ class RevisorController extends Controller
       return redirect('/')->with('message', 'L\'utente è diventato revisore');
    }
 
+   public function reviseAnnouncements(Announcement $announcement){
+      $announcement->setAccepted(null);
+      return redirect()->back()->with('message', 'Annuncio approvato');
+   }
 }

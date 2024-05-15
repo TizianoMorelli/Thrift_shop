@@ -15,7 +15,7 @@
     <div class="container my-5">
         <div class="row justify-content-center ">
             @foreach ($announcements_to_revise as $announcement )
-            <div class="col-5 ">
+            <div class="col-12 col-md-3">
                 <div class="card mb-3">
                     <img src="{{Storage::url($announcement->img)}}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -26,26 +26,16 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-6">
-                                <form
-                                action="{{route('revisor.accept_announcement', ['announcement'=>$announcement])}}" method="POST">
-                                @csrf
-                                @method('PATCH')
-                                <button type="submit" class="btn btn-success">
-                                    Accetta
-                                </button>
-                            </form>
-                        </div>
                         <div class="col-6">
                             <form
-                            action="{{route('revisor.reject_announcement', ['announcement'=>$announcement])}}" method="POST">
+                            action="{{route('revisor.revise', ['announcement'=>$announcement])}}" method="POST">
                             @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn btn-success">
-                                Rifiuta
-                            </button>
-                        </form>
-                    </div>
+                                @method('PATCH')
+                                <button type="submit" class="btn btn-success">
+                                    Revisiona
+                                </button>
+                             </form>
+                        </div>
                 </div>
             </div>
         </div>

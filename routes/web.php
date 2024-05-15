@@ -22,7 +22,7 @@ Route::get('/announcement/show/{announcement}', [AnnouncementController::class, 
 Route::get('category/index/{category}', [CategoryController::class, 'index'])->name('category.index');
 
 // RevisorController
-Route::get('revisor/home', [RevisorController::class, 'index'])->name('revisor.index')->middleware('isRevisor');
+Route::get('revisor/home', [RevisorController::class, 'index'])->name('revisor.home')->middleware('isRevisor');
 
 Route::patch('accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement')->middleware('isRevisor');
 
@@ -32,4 +32,6 @@ Route::get('revisor/become', [RevisorController::class,'becomeRevisor'])->name('
 
 Route::get('make/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('revisor.make');
 
-Route::get('revisor/revise', [RevisorController::class, 'reviseAnnouncements'])->name('revisor.revise')->middleware('isRevisor');
+Route::get('revisor/revise', [RevisorController::class, 'reviseIndex'])->name('revisor.index')->middleware('isRevisor');
+
+Route::patch('revisor/revise/{announcement}', [RevisorController::class, 'reviseAnnouncements'])->name('revisor.revise')->middleware('isRevisor');
