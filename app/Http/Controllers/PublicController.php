@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     function home() {
-        return view('welcome');
+
+        $announcements = Announcement::where('is_accepted', true)->take(4)->get()->sortByDesc('created_at');
+
+        return view('welcome', compact('announcements'));
     }
 }
