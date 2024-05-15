@@ -49,4 +49,8 @@ class RevisorController extends Controller
       $announcement->setAccepted(null);
       return redirect()->back()->with('message', 'Annuncio approvato');
    }
+
+   public function workWithUs() {
+      return view('revisor.workWithUs');
+   }
 }

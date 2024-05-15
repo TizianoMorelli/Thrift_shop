@@ -27,10 +27,12 @@ class AnnouncementController extends Controller
     }
 
     public function searchAnnouncements(Request $request) {
-        $announcements = Announcement::search($request->searched)->get();
+        $word = $request->searched;
+
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->get();
         //  dd($announcements);
         // $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
-        return view('announcement.search', compact('announcements'));        
+        return view('announcement.search', compact('announcements', 'word'));        
     }
 }
 
