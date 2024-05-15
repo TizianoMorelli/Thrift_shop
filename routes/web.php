@@ -11,6 +11,9 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 
 Route::get('/announcement/search', [AnnouncementController::class, 'searchAnnouncements'])->name('announcement.search');
 
+// Newsletter 
+Route::post('/submit', [PublicController::class, 'submitNewsletter'])->name('newsletter');
+
 // AnnouncementController 
 Route::get('/announcement/create', [AnnouncementController::class, 'create'])->name('announcement.create')->middleware('auth');
 
@@ -28,13 +31,17 @@ Route::patch('accetta/annuncio/{announcement}', [RevisorController::class, 'acce
 
 Route::patch('rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement')->middleware('isRevisor');
 
+//? Diventa revisore invio mail
 Route::get('revisor/become', [RevisorController::class,'becomeRevisor'])->name('revisor.become')->middleware('auth');
 
+//? Accettazione utente che diventa revisore dalla mail
 Route::get('make/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('revisor.make');
+
+//? Pagina con storia e lavora con noi
+Route::get('revisor/lavora-con-noi', [RevisorController::class, 'workWithUs'])->name('workWithUs');
 
 Route::get('revisor/revise', [RevisorController::class, 'reviseIndex'])->name('revisor.index')->middleware('isRevisor');
 
 Route::patch('revisor/revise/{announcement}', [RevisorController::class, 'reviseAnnouncements'])->name('revisor.revise')->middleware('isRevisor');
 
 
-Route::get('revisor/lavora-con-noi', [RevisorController::class, 'workWithUs'])->name('workWithUs');
