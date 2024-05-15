@@ -25,14 +25,6 @@
                         href="{{ route('announcement.create') }}">Crea annuncio</a>
                 </li>
 
-
-
-            
-
-  
-
-
-
                 <li class="nav-item dropdown">
                     <a class="nav-link transition_03 dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,7 +46,7 @@
                 <li class="nav-item">
                     @if (Auth::user() && Auth::user()->is_revisor)
                     <a href="{{route('revisor.home')}}" class="btn btn_standard position-relative">
-                      Zona Revisor
+                    Revisor
                       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                         {{App\Models\Announcement::toBeRevisionedCount()}}
                       </span>
@@ -63,15 +55,14 @@
                 </li>
 
 
-              <li class="nav-item ps-5">
-                <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                    <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success btn_standard" type="submit">Cerca</button>
-                </form>
-              </li>
+              
 
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
+                        <div class="search-box">
+                            <button class="btn-search"></button>
+                            <input type="text" class="input-search" placeholder="Type to Search...">
+                          </div>
                         <li class="nav-item dropdown end-0">
                             <a class="nav-link dropdown-toggle dropdown-toggle2" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -102,7 +93,18 @@
     </div>
     <div class="d-none d-lg-block">
         <div>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav justify-content-end d-flex">
+                <li class="nav-item align-items-center d-flex   ps-lg-5 my-2 my-md-0">
+                    <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
+                        <div class="search-box">
+                          <button class="btn-search">
+                            
+                        </button>
+                          <input name="searched" type="search" placeholder="Search" aria-label="Search" class="input-search">
+                          <button type="submit" class="btn"><i class="bi bi-search"></i></button>
+                        </div>                        
+                    </form>
+                  </li>
                 <li class="nav-item dropdown end-0">
                     <a class="nav-link dropdown-toggle dropdown-toggle2" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">

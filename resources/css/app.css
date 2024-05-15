@@ -18,6 +18,8 @@
 
 @import './standard.css';
 
+@import './search.css';
+
 .padding {
     padding-top: 80px;
 }

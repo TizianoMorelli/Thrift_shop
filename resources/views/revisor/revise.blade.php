@@ -15,7 +15,7 @@
     <div class="container my-5">
         <div class="row justify-content-center ">
             @foreach ($announcements_to_revise as $announcement )
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-4 col-lg-3">
                 <div class="card mb-3">
                     <img src="{{Storage::url($announcement->img)}}" class="card-img-top" alt="...">
                     <div class="card-body">
