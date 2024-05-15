@@ -4,7 +4,7 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
-                    <h1 class="text-center title-index title-page">Search Annunci</h1>
+                    <h1 class="text-center title-index title-page">Sono stati trovati {{$announcements->count()}} annunci con la parola {{ucfirst($word)}}</h1>
                 </div>
             </div>
         </div>

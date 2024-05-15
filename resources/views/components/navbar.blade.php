@@ -61,9 +61,6 @@
                     @endif
                 </li>
 
-
-              
-
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
                         <li class="nav-item w-50 my-3">
