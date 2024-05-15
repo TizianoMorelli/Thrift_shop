@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center ">
             <div class="col-12 d-flex justify-content-center">
                 <h2 class="text-center title-page">
