@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Mail\BecomeRevisor;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
@@ -23,6 +28,13 @@ class RevisorController extends Controller
    }
 
    public function becomeRevisor() {
-      return view('revisor.become');
+      Mail::to('admin@thiftshop.it')->send(new BecomeRevisor(Auth::user()));
+      return redirect()->back()->with('message', 'La richiesta di diventare revisore è stata inviata, risponderemo al più presto.');
    }
+
+   public function makeRevisor(User $user) {
+      Artisan::call('app:make-user-revisor', ["email"=>$user->email]);
+      return redirect('/')->with('message', 'L\'utente è diventato revisore');
+   }
+
 }
