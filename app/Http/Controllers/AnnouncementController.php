@@ -29,3 +29,5 @@ class AnnouncementController extends Controller
         return view('announcement.search', compact('announcements'));        
     }
 }
+
+

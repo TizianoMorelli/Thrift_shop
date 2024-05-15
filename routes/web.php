@@ -28,5 +28,6 @@ Route::patch('accetta/annuncio/{announcement}', [RevisorController::class, 'acce
 
 Route::patch('rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
 
+Route::get('revisor/become', [RevisorController::class,'becomeRevisor'])->name('revisor.become')->middleware('auth');
 
-
+Route::post('revisor/become', [RevisorController::class, 'sendEmailRev'])->name('revisor.mailSend');

@@ -21,4 +21,8 @@ class RevisorController extends Controller
       $announcement->setAccepted(false);
       return redirect()->back()->with('message', 'Annuncio rifiutato');
    }
+
+   public function becomeRevisor() {
+      return view('revisor.become');
+   }
 }
