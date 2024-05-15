@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container m-5">
+    <div class="container mt-5">
         <div class="row justify-content-center ">
             <div class="col-12 d-flex justify-content-center">
                 <h2 class="text-center title-page">
@@ -17,12 +17,14 @@
             @foreach ($announcements_to_revise as $announcement )
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="card mb-3">
+                    <a class="img_card" href="{{route('announcement.show', compact('announcement'))}}">
                     <img src="{{Storage::url($announcement->img)}}" class="card-img-top" alt="...">
+                    </a>
                     <div class="card-body">
-                        <h4 class="card-title">{{$announcement->title}}</h4>
-                        <h6 class="card-text">{{$announcement->subtitle}}</h6>
-                        <p class="card-text">{{$announcement->body}}</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated {{$announcement->updated_at->format('d/m/Y')}}</small></p>
+                        <h4 class="text-truncate card-title">{{$announcement->title}}</h4>
+                        <h6 class="text-truncate card-text">{{$announcement->subtitle}}</h6>
+                        <p class="text-truncate card-text">{{$announcement->body}}</p>
+                        <p class="text-truncate card-text"><small class="text-body-secondary">Last updated {{$announcement->updated_at->format('d/m/Y')}}</small></p>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -35,6 +37,17 @@
                                     Revisiona
                                 </button>
                              </form>
+                        </div>
+                        <div class="col-6">
+                            @if ($announcement->is_accepted == 1)
+                            <span class="position-absolute top-0 start-0 translate-middle p-2 bg-success border border-light rounded-circle">
+                                <span class="visually-hidden">New alerts</span>
+                              </span>
+                            @else
+                            <span class="position-absolute top-0 start-0 translate-middle p-2 bg-danger border border-light rounded-circle">
+                              <span class="visually-hidden">New alerts</span>
+                            </span>                                
+                            @endif
                         </div>
                 </div>
             </div>

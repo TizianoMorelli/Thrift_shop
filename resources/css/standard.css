@@ -71,3 +71,14 @@
 
 }
 
+@media screen and (max-width:992px) {
+
+    .padding {
+        padding-top: 0px;
+    }
+
+    .title-page{
+        position: relative;
+        margin-top: 100px;
+    }
+}
