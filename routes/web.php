@@ -24,9 +24,9 @@ Route::get('category/index/{category}', [CategoryController::class, 'index'])->n
 // RevisorController
 Route::get('revisor/home', [RevisorController::class, 'index'])->name('revisor.index')->middleware('isRevisor');
 
-Route::patch('accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement');
+Route::patch('accetta/annuncio/{announcement}', [RevisorController::class, 'acceptAnnouncement'])->name('revisor.accept_announcement')->middleware('isRevisor');
 
-Route::patch('rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement');
+Route::patch('rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement')->middleware('isRevisor');
 
 
 
