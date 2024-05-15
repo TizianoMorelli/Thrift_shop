@@ -11,7 +11,7 @@ class IndexCategory extends Component
     public function render()
     {
         $categories=Category::all();
-        $announcements=Announcement::orderBy('updated_at', 'desc')->get();
+        $announcements=Announcement::where('is_accepted', true)->orderBy('updated_at', 'desc')->get();
         return view('livewire.index-category', compact('categories', 'announcements'));
     }
 }

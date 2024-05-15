@@ -42,7 +42,10 @@
                             <li>
                                 <a class="dropdown-item d-flex justify-content-between"
                                     href="{{ route('category.index', compact('category')) }}">{{ ucfirst($category->name) }}
-                                    <span>{{ $category->announcements->count() }}</span>
+                                    <span>
+                                        {{ $category->announcements->where('is_accepted', true)->count() }}
+                                    </span>
+                                    
                                 </a>
                             </li>
                         @endforeach
