@@ -10,6 +10,8 @@
 
 .logo_navbar {
     max-width: 150px;
+    /* padding-left: 20px; */
+    margin-left: 20px;
 }
 
 .bg_nav {
