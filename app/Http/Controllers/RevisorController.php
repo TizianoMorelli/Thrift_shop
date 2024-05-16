@@ -13,44 +13,60 @@ use Illuminate\Support\Facades\DB;
 
 class RevisorController extends Controller
 {
-   public function index(){
-    $announcement_to_check = Announcement::where('is_accepted', null)->first();
-    return view('revisor.index',compact('announcement_to_check'));
+   public function index()
+   {
+      $announcement_to_check = Announcement::where('is_accepted', null)->first();
+      return view('revisor.index', compact('announcement_to_check'));
    }
 
-   public function reviseIndex(){
-    $announcements_to_revise = Announcement::whereNotNull('is_accepted')->get();
-   //  $announcement_to_revise = DB::table('announcements')->whereNotNull('is_accepted')->get();
-   //  dd($announcement_to_revise);
-    return view('revisor.revise',compact('announcements_to_revise'));
+   public function reviseIndex()
+   {
+      $announcements_to_revise = Announcement::whereNotNull('is_accepted')->get();
+      //  $announcement_to_revise = DB::table('announcements')->whereNotNull('is_accepted')->get();
+      //  dd($announcement_to_revise);
+      return view('revisor.revise', compact('announcements_to_revise'));
    }
 
-   public function acceptAnnouncement(Announcement $announcement){
+   public function acceptAnnouncement(Announcement $announcement)
+   {
       $announcement->setAccepted(true);
       return redirect()->back()->with('message', 'Annuncio approvato');
    }
 
-   public function rejectAnnouncement(Announcement $announcement){
+   public function rejectAnnouncement(Announcement $announcement)
+   {
       $announcement->setAccepted(false);
       return redirect()->back()->with('message', 'Annuncio rifiutato');
    }
 
-   public function becomeRevisor() {
-      Mail::to('admin@thiftshop.it')->send(new BecomeRevisor(Auth::user()));
+   public function becomeRevisor(Request $request)
+   {
+
+      $name = $request->input('name');
+      $email = $request->input('email');
+      $usermessage = $request->input('message');
+
+      $user = Auth::user();
+      
+      // dd($request->message);
+      Mail::to('admin@thiftshop.it')->send(new BecomeRevisor($name, $email, $usermessage, $user));
       return redirect()->back()->with('message', 'La richiesta di diventare revisore è stata inviata, risponderemo al più presto.');
    }
 
-   public function makeRevisor(User $user) {
-      Artisan::call('app:make-user-revisor', ["email"=>$user->email]);
+   public function makeRevisor(User $user)
+   {
+      Artisan::call('app:make-user-revisor', ["email" => $user->email]);
       return redirect('/')->with('message', 'L\'utente è diventato revisore');
    }
 
-   public function reviseAnnouncements(Announcement $announcement){
+   public function reviseAnnouncements(Announcement $announcement)
+   {
       $announcement->setAccepted(null);
       return redirect()->back()->with('message', 'Annuncio approvato');
    }
 
-   public function workWithUs() {
+   public function workWithUs()
+   {
       return view('revisor.workWithUs');
    }
 }

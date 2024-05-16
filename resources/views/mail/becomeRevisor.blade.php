@@ -8,9 +8,11 @@
 </head>
 <body>
     <h1>Un utente ha chiesto di diventare revisore</h1>
-    <p>Nome: {{$user->name}}</p>
-    <p>Email: {{$user->email}}</p>
+    <p>Nome: {{$name}}</p>
+    <p>Email: {{$email}}</p>
+    <p>Messaggio:</p>
+    <p>{{$usermessage}}</p>
     <p>Se vuoi rendere questo utente revisore clicca qui sotto</p>
-    <a href="{{route('revisor.make', compact('user'))}}">Rendi {{$user->name}} revisore</a>
+    <a href="{{route('revisor.make', ['user' => $user->id])}}">Rendi {{$name}} revisore</a>
 </body>
 </html>

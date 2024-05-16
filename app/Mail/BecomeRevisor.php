@@ -18,9 +18,13 @@ class BecomeRevisor extends Mailable
     /**
      * Create a new message instance.
      */
-    public $user;
-    public function __construct(User $user)
+    public $name, $email, $usermessage, $user;
+    
+    public function __construct($name, $email, $usermessage, $user )
     {
+        $this->name = $name;
+        $this->email = $email;
+        $this->usermessage = $usermessage;
         $this->user = $user;
     }
 

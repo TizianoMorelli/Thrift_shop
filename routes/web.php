@@ -32,7 +32,7 @@ Route::patch('accetta/annuncio/{announcement}', [RevisorController::class, 'acce
 Route::patch('rifiuta/annuncio/{announcement}', [RevisorController::class, 'rejectAnnouncement'])->name('revisor.reject_announcement')->middleware('isRevisor');
 
 //? Diventa revisore invio mail
-Route::get('revisor/become', [RevisorController::class,'becomeRevisor'])->name('revisor.become')->middleware('auth');
+Route::post('revisor/become', [RevisorController::class,'becomeRevisor'])->name('revisor.become')->middleware('auth');
 
 //? Accettazione utente che diventa revisore dalla mail
 Route::get('make/revisor/{user}', [RevisorController::class,'makeRevisor'])->name('revisor.make');
