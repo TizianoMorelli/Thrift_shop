@@ -7,7 +7,7 @@
     <div class="row justify-content-center ">
         {{-- <div class="col-12 col-md-6"> --}}
         <div class="col-12 d-flex justify-content-center">
-            <h1 class="text-center mb-2 title-page">Inserisci un annuncio</h1>
+            <h1 class="text-center mb-2 title-page">{{__('title.createAnnouncements')}}</h1>
         </div>
 
         <div class="col-12 col-md-6 my-5">
