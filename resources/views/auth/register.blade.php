@@ -20,11 +20,11 @@
                 >
                 @csrf
                     <div class="mb-3">
-                      <label for="email" class="form-label">Indirizzo Email</label>
+                      <label for="email" class="form-label">Email</label>
                       <input type="email" name="email" class="form-control input_focused" id="email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nome Utente</label>
+                        <label for="name" class="form-label">{{__('form.name')}}</label>
                         <input type="text" name="name" class="form-control input_focused" id="name" aria-describedby="emailHelp">
                       </div>
                     <div class="mb-3">
@@ -32,14 +32,14 @@
                       <input type="password" name="password" class="form-control input_focused" id="password">
                     </div>
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Conferma password</label>
+                        <label for="password_confirmation" class="form-label">{{__('form.confirm')}}</label>
                         <input type="password" name="password_confirmation" class="form-control input_focused" id="password_confirmation">
                       </div>
                       <div class="d-flex justify-content-between">
-                          <button type="submit" class="btn btn-primary btn_standard">Registati</button>
+                          <button type="submit" class="btn btn-primary btn_standard">{{__('navbar.registrati')}}</button>
                         <p class="pt-2">
                           Sei già registrato? 
-                          <a href="{{route('login')}}"> Accedi</a>
+                          <a href="{{route('login')}}"> {{__('navbar.accedi')}}</a>
                         </p>
                     </div>
                   </form>

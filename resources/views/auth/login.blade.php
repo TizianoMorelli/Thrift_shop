@@ -17,7 +17,7 @@
                 <form class=" rounded-3 p-3 text-dark" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
-                        <label for="email" class="form-label">Indirizzo Email</label>
+                        <label for="email" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control input_focused" id="email"
                             aria-describedby="emailHelp">
                     </div>
@@ -27,10 +27,10 @@
                     </div>
 
                     <div class="d-flex justify-content-between">
-                        <button type="submit" class="btn btn-primary btn_standard">Accedi</button>
+                        <button type="submit" class="btn btn-primary btn_standard">{{__('navbar.accedi')}}</button>
                         <p class="pt-2">
                           Non sei registrato? 
-                          <a href="{{route('register')}}"> Registati</a>
+                          <a href="{{route('register')}}"> {{__('navbar.registrati')}}</a>
                         </p>
                     </div>
                 </form>
