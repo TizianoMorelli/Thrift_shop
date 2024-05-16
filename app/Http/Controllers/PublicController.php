@@ -26,4 +26,9 @@ class PublicController extends Controller
         return redirect()->back()->with('message', "Grazie per esserti iscritto alla Newsletter!");
         
     }
+
+    public function setLanguage($lang){
+        session()->put('locale', $lang);
+        return redirect()->back();
+}
 }

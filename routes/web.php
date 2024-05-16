@@ -40,8 +40,9 @@ Route::get('make/revisor/{user}', [RevisorController::class,'makeRevisor'])->nam
 //? Pagina con storia e lavora con noi
 Route::get('revisor/lavora-con-noi', [RevisorController::class, 'workWithUs'])->name('workWithUs');
 
-Route::get('revisor/revise', [RevisorController::class, 'reviseIndex'])->name('revisor.index')->middleware('isRevisor');
+
 
 Route::patch('revisor/revise/{announcement}', [RevisorController::class, 'reviseAnnouncements'])->name('revisor.revise')->middleware('isRevisor');
 
-
+//language
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');

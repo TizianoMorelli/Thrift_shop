@@ -4,7 +4,7 @@
             {{-- <div class="col-12"> --}}
             <div class="col-12 d-flex justify-content-center">
                 {{-- <h1 class="text-center title-index title-page">Tutti gli annunci</h1> --}}
-                <h1 class="text-center title-index title-page">Tutti gli annunci</h1>
+                <h1 class="text-center title-index title-page">{{__('title.allAnnouncements')}}</h1>
                 {{-- <p>Vuoi inserire un annuncio? <a class="btn btn-primary" href="{{route('announcement.create')}}">Inserisci</a></p> --}}
             </div>
         </div>

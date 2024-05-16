@@ -88,6 +88,35 @@
 
 }
 
+.dropdown_lang{
+    background-color: transparent !important;
+    border: none !important;
+    max-width: 10%;
+}
+
+.btn-lang{
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    transition: 0.3s;
+    margin: 4px 5px 0px 0px !important;
+}
+
+.btn-lang:hover{
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    scale: 110%;
+    padding: 0 !important;
+}
+
+.dropdown-item:hover {
+    background-color: transparent !important;
+}
+
+
 @media screen and (max-width:992px) {
 
     .padding {
