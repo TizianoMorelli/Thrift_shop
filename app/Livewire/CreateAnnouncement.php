@@ -15,23 +15,29 @@ class CreateAnnouncement extends Component
     use WithFileUploads;
 
     #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
-    #[Validate('required', message: 'Il campo è obligatorio.')]
+    #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $title;
+
     #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
-    #[Validate('required', message: 'Il campo è obligatorio.')]
+    #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $subtitle;
+
     #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
-    #[Validate('required', message: 'Il campo è obligatorio.')]
+    #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $body;
-    #[Validate('required', message: 'Il campo è obligatorio.')]
+
+    #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $price;
-    #[Validate('required', message: 'Il campo è obligatorio.')]
+
+    #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $category;
+
     #[Validate('max:6000', message:'Non entraaa!')]
-    #[Validate('image', message:'Deve essere un\'immagine!')]
+    // #[Validate('image', message:'Deve essere un\'immagine!')]
     public $images = [];
+    
     #[Validate('max:6000', message:'Non entraaa!')]
-    #[Validate('image', message:'Deve essere un\'immagine!')]
+    // #[Validate('image', message:'Deve essere un\'immagine!')]
     public $temporary_images;
 
 

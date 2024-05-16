@@ -69,7 +69,6 @@
                             <div class="row py-4 d-flex flex-column ">
                                 @foreach ($images as $key => $image)
                                     <div class="col my-3 h-100">
-                                        {{-- <div  style="height:500px; background-image: url({{ $image->temporaryUrl() }})"></div> --}}
                                         <div class="position-relative">
                                             <img src="{{ $image->temporaryUrl() }}" alt="Immagine caricata" width="300px" >
                                             <button wire:click="removeImage({{ $key }})" class="rounded_circle position-absolute" type="button"><i class="bi bi-x fs-1"></i></button>
@@ -95,6 +94,7 @@
                 <button type="submit" class="btn">{{__('form.create')}}</button>
             </form>
             <x-display-message />
+            <x-display-error />
         </div>
 
 
