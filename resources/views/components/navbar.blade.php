@@ -67,7 +67,7 @@
     <div class="d-lg-none">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <div class="dropdown">
+                <div class="dropdown mt-2">
                     <button class="btn btn_standard dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-translate"></i>
                     </button>
