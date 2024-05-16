@@ -39,14 +39,8 @@
                 </div>
 
                 <div class="mb-3">
-<<<<<<< HEAD
-                    <select required wire:model="category" class="form-select input_focused"
-                        aria-label="Default select example">
-                        <option value="" selected>Categoria</option>
-=======
                     <select required wire:model="category" class="form-select input_focused" aria-label="Default select example">
                         <option value="" selected>{{__('form.category')}}</option>
->>>>>>> refs/remotes/origin/main
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
                         @endforeach
@@ -58,8 +52,8 @@
                     </div>
                 </div>
                 <div class="mb-3">
-<<<<<<< HEAD
-                    <input name="images"
+                    <label for="formFileSm" class="form-label ">{{__('form.img')}}</label>
+                    <input name="images" id="formFileSm"
                         class="form-control form-control-sm input_focused @error('temporary_images.*') is-invalid @enderror"
                         type="file" multiple wire:model="temporary_images">
                     <div class="text-danger fw-bold ">
@@ -67,11 +61,6 @@
                             {{ $message }}
                         @enderror
                     </div>
-=======
-
-                    <label for="formFileSm" class="form-label ">{{__('form.img')}}</label>
-                    <input class="form-control form-control-sm input_focused" id="formFileSm" type="file" wire:model="img">
->>>>>>> refs/remotes/origin/main
                 </div>
                 @if (!empty($images))
                     <div class="row">
