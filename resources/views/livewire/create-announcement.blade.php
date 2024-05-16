@@ -42,11 +42,8 @@
                     <select required wire:model="category" class="form-select input_focused" aria-label="Default select example">
                         <option value="" selected>{{__('form.category')}}</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
                         @endforeach
-                        {{-- @if ($category = 0)
-                            <p>Non va bene</p>
-                        @endif --}}
                     </select>
                     <div class="text-danger fw-bold ">
                         @error('category')
@@ -55,10 +52,35 @@
                     </div>
                 </div>
                 <div class="mb-3">
-
                     <label for="formFileSm" class="form-label ">{{__('form.img')}}</label>
-                    <input class="form-control form-control-sm input_focused" id="formFileSm" type="file" wire:model="img">
+                    <input name="images" id="formFileSm"
+                        class="form-control form-control-sm input_focused @error('temporary_images.*') is-invalid @enderror"
+                        type="file" multiple wire:model="temporary_images">
+                    <div class="text-danger fw-bold ">
+                        @error('temporary_images.*')
+                            {{ $message }}
+                        @enderror
+                    </div>
                 </div>
+                @if (!empty($images))
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Anteprima immagini caricate</p>
+                            <div class="row py-4 d-flex flex-column ">
+                                @foreach ($images as $key => $image)
+                                    <div class="col my-3 h-100">
+                                        <div class="position-relative">
+                                            <img src="{{ $image->temporaryUrl() }}" alt="Immagine caricata" width="300px" >
+                                            <button wire:click="removeImage({{ $key }})" class="rounded_circle position-absolute" type="button"><i class="bi bi-x fs-1"></i></button>
+                                        </div>
+
+
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
 
                 <div class="mb-3">
                     <label for="price" class="form-label input_focused">{{__('form.price')}}</label>
@@ -72,6 +94,7 @@
                 <button type="submit" class="btn">{{__('form.create')}}</button>
             </form>
             <x-display-message />
+            <x-display-error />
         </div>
 
 

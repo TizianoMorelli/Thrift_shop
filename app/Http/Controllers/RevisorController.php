@@ -23,8 +23,6 @@ class RevisorController extends Controller
    public function reviseIndex()
    {
       $announcements_to_revise = Announcement::whereNotNull('is_accepted')->get();
-      //  $announcement_to_revise = DB::table('announcements')->whereNotNull('is_accepted')->get();
-      //  dd($announcement_to_revise);
       return view('revisor.revise', compact('announcements_to_revise'));
    }
 
