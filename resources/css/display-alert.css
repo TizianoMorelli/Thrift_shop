@@ -5,5 +5,5 @@
 
 .my-alert-success{
 
-    background-color: green;
+    background-color: var( --color-A);
 }

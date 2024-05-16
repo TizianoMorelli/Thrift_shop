@@ -63,7 +63,7 @@ class RevisorController extends Controller
    public function reviseAnnouncements(Announcement $announcement)
    {
       $announcement->setAccepted(null);
-      return redirect()->back()->with('message', 'Annuncio approvato');
+      return redirect()->back()->with('message', 'Annuncio tornato in revisione');
    }
 
    public function workWithUs()
