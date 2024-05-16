@@ -71,6 +71,23 @@
 
 }
 
+.rounded_circle{
+    background-color: #dc3545;
+    color: white;
+    border-radius: 100%;
+    border: none;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    top: -10px;
+    left:-10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 13px;
+
+}
+
 @media screen and (max-width:992px) {
 
     .padding {

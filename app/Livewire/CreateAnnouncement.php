@@ -14,18 +14,43 @@ class CreateAnnouncement extends Component
 {
     use WithFileUploads;
 
-    #[Validate('required|min:5')]
+    #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
+    #[Validate('required', message: 'Il campo è obligatorio.')]
     public $title;
-    #[Validate('required|min:5')]
+    #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
+    #[Validate('required', message: 'Il campo è obligatorio.')]
     public $subtitle;
-    #[Validate('required|min:5')]
+    #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
+    #[Validate('required', message: 'Il campo è obligatorio.')]
     public $body;
-    #[Validate('required')]
+    #[Validate('required', message: 'Il campo è obligatorio.')]
     public $price;
-    #[Validate('required')]
+    #[Validate('required', message: 'Il campo è obligatorio.')]
     public $category;
+    #[Validate('max:6000', message:'Non entraaa!')]
+    #[Validate('image', message:'Deve essere un\'immagine!')]
+    public $images = [];
+    #[Validate('max:6000', message:'Non entraaa!')]
+    #[Validate('image', message:'Deve essere un\'immagine!')]
+    public $temporary_images;
+
 
     public $img;
+
+
+    public function updatedTemporaryImages()
+    {
+        foreach ($this->temporary_images as $image) {
+            $this->images[] = $image;
+        }
+    }
+
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
 
     public function store()
     {
@@ -37,7 +62,9 @@ class CreateAnnouncement extends Component
         } else {
             // dd($this->category);
 
-            Announcement::create([
+
+
+            $announcement = Announcement::create([
 
                 'title' => $this->title,
                 'subtitle' => $this->subtitle,
@@ -45,9 +72,15 @@ class CreateAnnouncement extends Component
                 'price' => $this->price,
                 'category_id' => $this->category,
                 'user_id' => Auth::user()->id,
-                'img' => $this->img ? $this->img->store("public") : '/default-image.jpg',
 
             ]);
+
+            if (count($this->images)) {
+                foreach ($this->images as $image) {
+                    $announcement->images()->create(['path' => $image->store('images', 'public')]);
+                }
+            }
+
             $this->reset();
 
             session()->flash('message', 'Articolo creato correttamente');

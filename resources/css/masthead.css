@@ -2,7 +2,7 @@
   margin-bottom: 150px;
   height: 60vh;
   min-height: 500px;
-  background-image: url('/public/storage/media/header.png');
+  background-image: url('/public/images/media/header.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,15 +34,6 @@ width: 100%;
 @media screen and (max-width:992px) {
 
   .masthead {
-    margin-bottom: 10px;
-    height: 60vh;
-    min-height: 500px;
-    background-image: url('/public/storage/media/header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* margin-top: 80px; */
-    background-attachment: fixed;
-    
+    margin-bottom: 10px;    
   }
 }

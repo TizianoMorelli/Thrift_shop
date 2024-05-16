@@ -5,7 +5,7 @@
                 <h1>{{$announcement->title}}</h1>
             </div>
             <div class="col-12 col-md-6 ">
-                <x-carousel />
+                <x-carousel :$announcement />
             </div>
 
             <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-column">

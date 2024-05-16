@@ -5,8 +5,14 @@
     <div class="card card_announcement position-relative ">
         {{$slot}}
         <a class="img_card" href="{{route('announcement.show', compact('announcement'))}}">
-            <img src="{{ Storage::url($announcement->img) }}" class="card-img-top object-fit-cover" alt="{{$announcement->title}}" min-height="200px">
-            {{-- <img src="https://picsum.photos/1000/500" class="card-img-top object-fit-cover " alt="{{$announcement->title}}" height="250px"> --}}
+            <img src=
+            "@if ($announcement->images->count())
+                {{ Storage::url($announcement->images->first()->path) }}
+            @else 
+                {{Storage::url('public/default-image.jpg')}}
+            @endif" 
+            class="card-img-top object-fit-cover" 
+            alt="{{$announcement->title}}" min-height="200px">
         </a>
         <div class=" card-body d-flex flex-column ">
             <a class="card_category mb-2" href="{{route('category.index', $announcement->category)}}"

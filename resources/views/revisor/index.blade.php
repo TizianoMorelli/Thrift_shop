@@ -9,12 +9,18 @@
         </div>
     </div>
     @if ($announcement_to_check)
-    {{-- @dd($announcement_to_check) --}}
+    {{-- @dd($announcement_to_check->images) --}}
     <div class="container my-5">
         <div class="row justify-content-center ">
             <div class="col-12 col-md-6 col-lg-4 my-4">
                 <div class="card mb-3">
-                    <img src="{{Storage::url($announcement_to_check->img)}}" class="card-img-top" alt="...">
+                    <img src=
+                    "@if ($announcement_to_check->images->count())
+                        {{ Storage::url($announcement_to_check->images->first()->path) }}
+                    @else 
+                        {{Storage::url('public/default-image.jpg')}}
+                    @endif" 
+                    class="card-img-top" alt="...">
                     <div class="card-body">
                       <h4 class="card-title">{{$announcement_to_check->title}}</h4>
                       <h6 class="card-text">{{$announcement_to_check->subtitle}}</h6>

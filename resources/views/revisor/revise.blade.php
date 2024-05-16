@@ -18,7 +18,15 @@
             <div class="col-12 col-md-4 col-lg-3">
                 <div class="card mb-3">
                     <a class="img_card" href="{{route('announcement.show', compact('announcement'))}}">
-                    <img src="{{Storage::url($announcement->img)}}" class="card-img-top" alt="...">
+                    <img 
+                        src=
+                        "@if ($announcement->images->count())
+                            {{ Storage::url($announcement->images->first()->path) }}
+                        @else 
+                            {{Storage::url('public/default-image.jpg')}}
+                        
+                        @endif" 
+                        class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
                         <h4 class="text-truncate card-title">{{$announcement->title}}</h4>

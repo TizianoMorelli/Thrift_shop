@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top bg_nav">
     <div class="container-fluid justify-content-between">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img class="logo_navbar" src="{{ Storage::url('public/logo/logo.png') }}" alt="">
+            <img class="logo_navbar" src="/images/logo/logo.png" alt="">
         </a>
         <button class="navbar-toggler navbar_toggler_focused " type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
