@@ -44,4 +44,5 @@ Route::get('revisor/revise', [RevisorController::class, 'reviseIndex'])->name('r
 
 Route::patch('revisor/revise/{announcement}', [RevisorController::class, 'reviseAnnouncements'])->name('revisor.revise')->middleware('isRevisor');
 
-
+//language
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
