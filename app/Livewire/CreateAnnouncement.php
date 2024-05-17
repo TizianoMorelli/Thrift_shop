@@ -2,13 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Jobs\ResizeImage;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
-
+use Illuminate\Support\Facades\File;
 
 class CreateAnnouncement extends Component
 {
@@ -83,9 +84,15 @@ class CreateAnnouncement extends Component
 
             if (count($this->images)) {
                 foreach ($this->images as $image) {
-                    $announcement->images()->create(['path' => $image->store('images', 'public')]);
+                    // $announcement->images()->create(['path' => $image->store('images', 'public')]); //!Non più utilizzato perchè adesso puntiamo a cartelle multiple in base all'id
+                    $newFileName = "announcements/{$this->announcement->id}"; // in public crea una cartella "announcements" dove verranno create delle sottocartelle che conterranno le immagini divise per id dell'annuncio
+                    $newImage =  $announcement->images()->create(['path' => $image->store($newFileName, 'public')]); //Salva l'immagine nella cartella public/announcmenets/'id dell'annuncio' e crea un record nella tabella immagini con il percorso dell'immagine stessa
+
+                    dispatch(new ResizeImage($newImage, 300, 300)); //mette il job di resizing dell'immagine in coda ai processi di Laravel per farla eseguire in background 
                 }
             }
+
+            File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
 
             $this->reset();
 
