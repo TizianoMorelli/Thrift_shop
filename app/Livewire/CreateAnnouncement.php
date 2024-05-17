@@ -90,9 +90,9 @@ class CreateAnnouncement extends Component
 
                     dispatch(new ResizeImage($newImage, 300, 300)); //mette il job di resizing dell'immagine in coda ai processi di Laravel per farla eseguire in background 
                 }
+                File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
             }
 
-            // File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
 
             $this->reset();
 
