@@ -84,13 +84,10 @@ class CreateAnnouncement extends Component
                     $newFileName = "announcements/{$announcement->id}"; // in public crea una cartella "announcements" dove verranno create delle sottocartelle che conterranno le immagini divise per id dell'annuncio
                     $newImage =  $announcement->images()->create(['path' => $image->store($newFileName, 'public')]); //Salva l'immagine nella cartella public/announcmenets/'id dell'annuncio' e crea un record nella tabella immagini con il percorso dell'immagine stessa
                     $newImagePath = $newImage->path; //!Diverso dal video
-                    // dd($newImagePath);
-                    // dispatch(new ResizeImage($newImage, 300, 300)); //mette il job di resizing dell'immagine in coda ai processi di Laravel per farla eseguire in background 
-                    ResizeImage::dispatch($newImagePath, 300, 300); //!Diverso dal video
+                    ResizeImage::dispatch($newImagePath, 300, 300); //!Diverso dal video - mette il job di resizing dell'immagine in coda ai processi di Laravel
                 }
                 File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
             }
-
 
             $this->reset();
 
