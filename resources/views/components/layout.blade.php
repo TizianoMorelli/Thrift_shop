@@ -13,12 +13,9 @@
 </head>
 <body>
     <x-navbar/>
-    <div class="padding">
-    </div>
+    <div class="padding"></div>
     {{$slot}}
-    <div class="padding2">
-
-    </div>
+    <div class="padding2"></div>
     <x-footer/>
 </body>
 </html>
