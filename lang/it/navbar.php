@@ -8,5 +8,13 @@ return [
     'categorie' => 'Categoria',
     'registrati' => 'Registrati',
     'accedi' => 'Accedi',
+    'search' => 'Cerca',
+    'searcharticles' => 'Cerca annunci',
 
+    'giocattoli' => 'Giocattoli',
+    'accessori' => 'Accessori',
+    'vestiti' => 'Vestiti',
+    'borsette' => 'Borse',
+    'portafogli' => 'Portafogli',
+    'ufficio' => 'Ufficio',
 ];

@@ -41,7 +41,7 @@
                 @foreach ($categories as $category)
                 <li>
                     <a class="dropdown-item d-flex justify-content-between"
-                    href="{{ route('category.index', compact('category')) }}">{{ ucfirst($category->name) }}
+                    href="{{ route('category.index', compact('category')) }}">{{__('navbar.' . $category->name) }}
                     <span>
                         {{ $category->announcements->where('is_accepted', true)->count() }}
                     </span>
@@ -84,8 +84,8 @@
             </li>
             <li class="nav-item w-50 my-3">
                 <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                    <button class="btn me-2 btn-outline-success btn_standard" type="submit">Cerca</button>
-                    <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn me-2 btn-outline-success btn_standard" type="submit">{{__('navbar.search')}}</button>
+                    <input name="searched" class="form-control me-2" type="search" placeholder="es. Lorem, Articoli, T-shirt" aria-label="Search">
                 </form>
             </li>
             <li class="nav-item dropdown end-0">
@@ -175,13 +175,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header border-0">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Cerca articolo</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{__('navbar.searcharticles')}}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="{{route('announcement.search')}}" method="GET" class="d-flex" role="search">
-                    <input name="searched" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success btn_standard" type="submit">Cerca</button>
+                    <input name="searched" class="form-control me-2" type="search" placeholder="es. Lorem, Articoli, T-shirt" aria-label="Search">
+                    <button class="btn btn-outline-success btn_standard" type="submit">{{__('navbar.search')}}</button>
                 </form>                              
             </div>
         </div>
