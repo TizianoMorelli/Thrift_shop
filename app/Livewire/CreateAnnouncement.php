@@ -34,12 +34,13 @@ class CreateAnnouncement extends Component
     public $category;
 
     #[Validate('max:6000', message:'Non entraaa!')]
+
     // #[Validate('image', message:'Deve essere un\'immagine!')]
     public $images = [];
     
-    #[Validate('max:6000', message:'Non entraaa!')]
-    // #[Validate('image', message:'Deve essere un\'immagine!')]
-    public $temporary_images;
+    // #[Validate('max:6000', message:'Non entraaa!')]
+    #[Validate(['temporary_images.*' => ['image','max:5000']], message:['temporary_images.*.max'=>'Una delle immagini caricate supera i 5MB','temporary_images.*' => 'Uno dei file caricati non è un immagine'])]
+    public $temporary_images = [];
 
 
     public $img;
@@ -47,8 +48,11 @@ class CreateAnnouncement extends Component
 
     public function updatedTemporaryImages()
     {
-        foreach ($this->temporary_images as $image) {
-            $this->images[] = $image;
+        if ($this->validateOnly('temporary_images.*')){
+
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
         }
     }
 
@@ -81,10 +85,13 @@ class CreateAnnouncement extends Component
             if (count($this->images)) {
                 foreach ($this->images as $image) {
                     // $announcement->images()->create(['path' => $image->store('images', 'public')]); //!Non più utilizzato perchè adesso puntiamo a cartelle multiple in base all'id
-                    $newFileName = "announcements/{$announcement->id}"; // in public crea una cartella "announcements" dove verranno create delle sottocartelle che conterranno le immagini divise per id dell'annuncio
-                    $newImage =  $announcement->images()->create(['path' => $image->store($newFileName, 'public')]); //Salva l'immagine nella cartella public/announcmenets/'id dell'annuncio' e crea un record nella tabella immagini con il percorso dell'immagine stessa
+                    $newFileName = "announcements/{$announcement->id}"; // in public crea una cartella "announcements" dove verranno create delle sottocartelle che conterranno le immagini divise per id dell'annuncio                                        
+                    $newImage = $announcement->images()->create([
+                        'path' => $image->store($newFileName, 'public')
+                    ]);
                     $newImagePath = $newImage->path; //!Diverso dal video
                     ResizeImage::dispatch($newImagePath, 300, 300); //!Diverso dal video - mette il job di resizing dell'immagine in coda ai processi di Laravel
+                   
                 }
                 File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
             }

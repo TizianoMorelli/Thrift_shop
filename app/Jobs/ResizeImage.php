@@ -20,7 +20,7 @@ class ResizeImage implements ShouldQueue
     private $h;
     private $fileName;
     private $path;
-    
+
     public function __construct($filePath, $w, $h)
     {
         $this->path = dirname($filePath); //dirname restituisce il nome di una cartella dato un percorso
@@ -42,6 +42,8 @@ class ResizeImage implements ShouldQueue
         
         $croppedImage = Image::load($srcPath)
                         ->fit(Fit::Crop,$w,$h) //! Diverso dal video - Lancia la funzione di cropping con le dimensioni e la posizione data
+                        // ->crop($w, $h, CropPosition::Center) //!fa schifino, non usatelo
                         ->save($destPath); //salva l'immagine nel percorso di destinazione
+      
     }
 }

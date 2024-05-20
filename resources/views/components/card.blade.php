@@ -1,4 +1,7 @@
-
+{{-- @php
+    $srcPath = Storage::url($announcement->images->first()->path);
+    $cropPath = "crop_300x300_$srcPath";
+@endphp --}}
 
 <div class="col-12 col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-xxl-2 my-4">
     {{-- @dd($announcements) --}}
@@ -7,7 +10,8 @@
         <a class="img_card" href="{{route('announcement.show', compact('announcement'))}}">
             <img src=
             "@if ($announcement->images->count())
-                {{ Storage::url($announcement->images->first()->path) }}
+                {{-- {{ Storage::url($announcement->images->first()->path) }} --}}
+                {{$announcement->images->first()->getUrl(300,300)}}
             @else 
                 {{Storage::url('public/default-image.jpg')}}
             @endif" 

@@ -12,6 +12,7 @@ class Image extends Model
     
     protected $fillable = [
         'path',
+        'cropped_path',
         'announcement_id'
     ];
     
