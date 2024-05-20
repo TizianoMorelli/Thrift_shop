@@ -6,7 +6,7 @@ return [
     'subtitle' => 'Sottotitolo',
     'body' => 'Descrizione dell\'articolo',
     'category' => 'Categorie',
-    'img' => 'Aggiungi un immagine',
+    'img' => 'Aggiungi immagini (MAX 5MB)',
     'price' => 'Prezzo',
     'name' => 'Nome',
     'confirm' => 'Conferma password',

@@ -6,7 +6,7 @@ return [
     'subtitle' => 'Subtítulo',
     'body' => 'Cuerpo del anuncio',
     'category' => 'Categoría',
-    'img' => 'Agregar imagen',
+    'img' => 'Agregar imagen (MAX 5MB)',
     'price' => 'Precio',
     'name' => 'Nombre',
     'confirm' => 'Confirmar password',

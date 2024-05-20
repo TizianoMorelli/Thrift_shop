@@ -6,7 +6,7 @@ return [
     'subtitle' => 'Subtitle',
     'body' => 'Body of announcement',
     'category' => 'Category',
-    'img' => 'Add image',
+    'img' => 'Add images (MAX 5MB)',
     'price' => 'Price',
     'name' => 'Name',
     'confirm' => 'Confirm password',

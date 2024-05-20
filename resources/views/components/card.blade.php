@@ -20,7 +20,7 @@
         </a>
         <div class=" card-body d-flex flex-column ">
             <a class="card_category mb-2" href="{{route('category.index', $announcement->category)}}"
-                class="card-text">{{ ucfirst($announcement->category->name) }}</a>
+                class="card-text">{{__('navbar.' . $announcement->category->name) }}</a>
                 <a class="title_card" href="{{route('announcement.show', compact('announcement'))}}">
                     <h5 class="card-title">{{ $announcement->title }}</h5>
                 </a>

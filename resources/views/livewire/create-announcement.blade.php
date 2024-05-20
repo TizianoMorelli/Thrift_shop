@@ -42,7 +42,7 @@
                     <select required wire:model="category" class="form-select input_focused" aria-label="Default select example">
                         <option value="" selected>{{__('form.category')}}</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
+                            <option value="{{ $category->id }}">{{__('navbar.' . $category->name) }}</option>
                         @endforeach
                     </select>
                     <div class="text-danger fw-bold ">
