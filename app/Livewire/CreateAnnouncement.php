@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
 use App\Jobs\ResizeImage;
 use Livewire\Component;
@@ -16,15 +17,15 @@ class CreateAnnouncement extends Component
 {
     use WithFileUploads;
 
-    #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
+    #[Validate('min:5', message: 'Il testo deve contenere almeno 5 caratteri')]
     #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $title;
 
-    #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
+    #[Validate('min:5', message: 'Il testo deve contenere almeno 5 caratteri')]
     #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $subtitle;
 
-    #[Validate('min:5', message:'Il testo deve contenere almeno 5 caratteri')]
+    #[Validate('min:5', message: 'Il testo deve contenere almeno 5 caratteri')]
     #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $body;
 
@@ -34,13 +35,13 @@ class CreateAnnouncement extends Component
     #[Validate('required', message: 'Il campo è obbligatorio.')]
     public $category;
 
-    #[Validate('max:6000', message:'Non entraaa!')]
+    #[Validate('max:6000', message: 'Non entraaa!')]
 
     // #[Validate('image', message:'Deve essere un\'immagine!')]
     public $images = [];
-    
+
     // #[Validate('max:6000', message:'Non entraaa!')]
-    #[Validate(['temporary_images.*' => ['image','max:5000']], message:['temporary_images.*.max'=>'Una delle immagini caricate supera i 5MB','temporary_images.*' => 'Uno dei file caricati non è un immagine'])]
+    #[Validate(['temporary_images.*' => ['image', 'max:5000']], message: ['temporary_images.*.max' => 'Una delle immagini caricate supera i 5MB', 'temporary_images.*' => 'Uno dei file caricati non è un immagine'])]
     public $temporary_images = [];
 
 
@@ -49,7 +50,7 @@ class CreateAnnouncement extends Component
 
     public function updatedTemporaryImages()
     {
-        if ($this->validateOnly('temporary_images.*')){
+        if ($this->validateOnly('temporary_images.*')) {
 
             foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
@@ -85,17 +86,16 @@ class CreateAnnouncement extends Component
 
             if (count($this->images)) {
                 foreach ($this->images as $image) {
-                    // $announcement->images()->create(['path' => $image->store('images', 'public')]); //!Non più utilizzato perchè adesso puntiamo a cartelle multiple in base all'id
-                    $newFileName = "announcements/{$announcement->id}"; // in public crea una cartella "announcements" dove verranno create delle sottocartelle che conterranno le immagini divise per id dell'annuncio                                        
+                    $newFileName = "announcements/{$announcement->id}";
                     $newImage = $announcement->images()->create([
                         'path' => $image->store($newFileName, 'public')
                     ]);
-                    $newImagePath = $newImage->path; //!Diverso dal video
-                    ResizeImage::dispatch($newImagePath, 300, 300); //!Diverso dal video - mette il job di resizing dell'immagine in coda ai processi di Laravel
+                    $newImagePath = $newImage->path;
+                    ResizeImage::dispatch($newImagePath, 300, 300);
                     GoogleVisionSafeSearch::dispatch($newImage->id);
-                   
+                    GoogleVisionLabelImage::dispatch($newImage->id);
                 }
-                File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
+                File::deleteDirectory(storage_path('app/livewire-tmp')); 
             }
 
             $this->reset();
