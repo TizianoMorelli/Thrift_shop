@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\GoogleVisionSafeSearch;
 use App\Jobs\ResizeImage;
 use Livewire\Component;
 use App\Models\Category;
@@ -91,6 +92,7 @@ class CreateAnnouncement extends Component
                     ]);
                     $newImagePath = $newImage->path; //!Diverso dal video
                     ResizeImage::dispatch($newImagePath, 300, 300); //!Diverso dal video - mette il job di resizing dell'immagine in coda ai processi di Laravel
+                    GoogleVisionSafeSearch::dispatch($newImage->id);
                    
                 }
                 File::deleteDirectory(storage_path('app/livewire-tmp')); //cancella i file temporanei creati da livewire durante il caricamento delle immagini
