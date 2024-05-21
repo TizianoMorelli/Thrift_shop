@@ -53,16 +53,7 @@
         </ul>
     </li>
     
-    <li class="nav-item">
-        @if (Auth::user() && Auth::user()->is_revisor)
-        <a href="{{route('revisor.home')}}" class="btn btn_standard position-relative">
-            Revisor
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                {{App\Models\Announcement::toBeRevisionedCount()}}
-            </span>
-        </a>
-        @endif
-    </li>
+    
     
     <div class="d-lg-none">
         <ul class="navbar-nav">
@@ -152,11 +143,20 @@
                 <li><a class="dropdown-item" href="{{ route('login') }}">{{__('navbar.accedi')}}</a></li>
                 @endguest
                 @auth
+                <li class="nav-item  ">
+                    @if (Auth::user() && Auth::user()->is_revisor)
+                    <a href="{{route('revisor.home')}}" class="dropdown-item position-relative">
+                        Revisor
+                        <span class="mx-1">
+                            {{App\Models\Announcement::toBeRevisionedCount()}}
+                        </span>
+                    </a>
+                    @endif
+                </li>
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button class="dropdown-item" type="submit">Logout <i
-                            class="bi bi-box-arrow-right px-2"></i></button>
+                        <button class="dropdown-item bg-light " type="submit">Logout <i class="bi bi-box-arrow-right px-2"></i></button>
                         </form>
                     </li>
                     @endauth

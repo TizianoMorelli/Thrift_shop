@@ -49,7 +49,8 @@
 
 
                                         <td class="p-3 table_revisor"><button class="btn btn_standard"
-                                                data-bs-toggle="modal" data-bs-target="#modalExplicit{{ $announcement->id }}">+</button></td>
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#modalExplicit{{ $announcement->id }}">+</button></td>
 
 
                                         {{-- @if ($image->labels) --}}
@@ -57,8 +58,8 @@
                                                 data-bs-toggle="modal"
                                                 data-bs-target="#modalLabel{{ $announcement->id }}">o</button></td>
                                         {{-- @else
-                                        <p>NL</p>
-                                    @endif --}}
+                                                    <p>NL</p>
+                                                    @endif --}}
                                         <td class="p-3 table_revisor">
                                             <form
                                                 action="{{ route('revisor.accept_announcement', ['announcement' => $announcement]) }}"
@@ -87,10 +88,11 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title">Contenuti Esplicit</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body d-flex flex-column">
-                                
+
                                                     @foreach ($announcement->images as $key => $image)
                                                         <h5>Immagine n: {{ $key + 1 }}</h5>
                                                         <div class="d-flex justify-content-evenly">
@@ -101,7 +103,7 @@
                                                             <p class="p-1 {{ $image->medical }}"> Medical</p>
                                                         </div>
                                                     @endforeach
-                                
+
                                                 </div>
                                             </div>
                                         </div>
@@ -128,8 +130,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                 @endforeach
                             </tbody>
                         </table>
@@ -163,45 +163,49 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="table_revisor p-3" scope="col">#</th>
-                                <th class="table_revisor p-3" scope="col">Titolo</th>
-                                <th class="table_revisor p-3" scope="col">Prezzo</th>
-                                <th class="table_revisor p-3" scope="col">Creazione</th>
-                                <th class="table_revisor p-3" scope="col">Dettaglio</th>
-                            </tr>
-                        </thead>
-                        <tbody class="">
-                            @foreach ($announcements_to_revise as $announcement)
-                                @if ($announcement->is_accepted == 1)
-                                    <tr class="border-bottom table-success">
-                                    @else
-                                    <tr class="border-bottom table-danger">
-                                @endif
-                                <th class="p-3">{{ $announcement->id }}</th>
-                                <td class="p-3">{{ $announcement->title }}</td>
-                                <td class="p-3">€ {{ $announcement->price }}</td>
-                                <td class="p-3">{{ $announcement->updated_at }}
-                                </td>
-                                <td class="p-3">
-                                    <a href="{{ route('announcement.show', ['announcement' => $announcement->id]) }}"
-                                        class="btn ms-2"><i class="bi bi-eye"></i></a>
-                                </td>
-                                <td class="p-3">
-                                    <form action="{{ route('revisor.revise', ['announcement' => $announcement]) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button class="btn btn-warning" type="submit">Annulla revisione</button>
-                                    </form>
-                                </td>
-                                </tr>
-                            @endforeach
+                    <div class="table-responsive">
+                        <table class="table">
 
-                        </tbody>
-                    </table>
+                            <thead>
+                                <tr>
+                                    <th class="table_revisor p-3" scope="col">#</th>
+                                    <th class="table_revisor p-3" scope="col">Titolo</th>
+                                    <th class="table_revisor p-3" scope="col">Prezzo</th>
+                                    <th class="table_revisor p-3" scope="col">Creazione</th>
+                                    <th class="table_revisor p-3" scope="col">Dettaglio</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                @foreach ($announcements_to_revise as $announcement)
+                                    @if ($announcement->is_accepted == 1)
+                                        <tr class="border-bottom table-success">
+                                        @else
+                                        <tr class="border-bottom table-danger">
+                                    @endif
+                                    <th class="p-3">{{ $announcement->id }}</th>
+                                    <td class="p-3">{{ $announcement->title }}</td>
+                                    <td class="p-3">€ {{ $announcement->price }}</td>
+                                    <td class="p-3">{{ $announcement->updated_at }}
+                                    </td>
+                                    <td class="p-3">
+                                        <a href="{{ route('announcement.show', ['announcement' => $announcement->id]) }}"
+                                            class="btn ms-2"><i class="bi bi-eye"></i></a>
+                                    </td>
+                                    <td class="p-3">
+                                        <form
+                                            action="{{ route('revisor.revise', ['announcement' => $announcement]) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button class="btn btn-warning" type="submit">Annulla revisione</button>
+                                        </form>
+                                    </td>
+                                    </tr>
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
