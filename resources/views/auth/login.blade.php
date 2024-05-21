@@ -3,7 +3,7 @@
  <div class="container mt-5">
     <div class="row">
         <div class="col-12">
-            <h1 class="text-center fw-bold mt-5 ">Effettua l'accesso per inserire un annuncio</h1>
+            <h1 class="text-center fw-bold mt-5 ">{{__('form.loginmessage')}}</h1>
         </div>
     </div>
  </div>
@@ -13,7 +13,7 @@
     <div class="container box-auth my-5">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-md-6">
-                <h1 class="my-5 text-center">Accedi a THRIFT SHOP</h1>
+                <h1 class="my-5 text-center">{{__('form.logintitle')}}</h1>
                 <form class=" rounded-3 p-3 text-dark" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
@@ -29,7 +29,7 @@
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary btn_standard">{{__('navbar.accedi')}}</button>
                         <p class="pt-2">
-                          Non sei registrato? 
+                            {{__('form.registered?')}} 
                           <a href="{{route('register')}}"> {{__('navbar.registrati')}}</a>
                         </p>
                     </div>

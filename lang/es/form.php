@@ -6,10 +6,13 @@ return [
     'subtitle' => 'Subtítulo',
     'body' => 'Cuerpo del anuncio',
     'category' => 'Categoría',
-    'img' => 'Agregar imagen',
+    'img' => 'Agregar imagen (MAX 5MB)',
     'price' => 'Precio',
     'name' => 'Nombre',
-    'confirm' => 'Confirmar contraseña',
-    'create' => 'Crear anuncio'
-
+    'confirm' => 'Confirmar password',
+    'create' => 'Crear anuncio',
+    'registered?' => '¿Ya estás registrado?',
+    'cta' => 'Registrarse en THRIFT SHOP',
+    'loginmessage' => 'Inicia sesión para agregar nuevos anuncios',
+    'logintitle' => 'Iniciar sesión en THRIFT SHOP'
 ];

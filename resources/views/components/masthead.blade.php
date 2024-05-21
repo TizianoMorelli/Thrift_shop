@@ -6,7 +6,7 @@
             {{__('header.cta')}}
           </h2>
 
-          <a class="btn btn_standard py-2 w-100 my-2" href="{{route('announcement.create')}}" >Vendi subito</a>
+          <a class="btn btn_standard py-2 w-100 my-2" href="{{route('announcement.create')}}" >{{__('header.button')}}</a>
          
         </div>
       </div>

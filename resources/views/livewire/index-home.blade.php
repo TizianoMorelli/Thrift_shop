@@ -12,11 +12,15 @@
     <div class="container-fluid my-5">
         <div class="row d-flex justify-content-center p-5">
             @foreach ( $announcements as $announcement )
+            <div class="col-10 col-sm-8 col-md-5 col-lg-3">
                 <x-card :announcement=$announcement>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        Nuovo
-                      </span>
+                    <div class="">
+                        <span class="w-25 position-absolute m-2 badge rounded-pill bg-danger">
+                            New
+                          </span>
+                    </div>
                 </x-card>
+            </div>
             @endforeach
         </div>
     </div>

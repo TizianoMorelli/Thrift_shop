@@ -4,7 +4,7 @@
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 d-flex justify-content-center">
-          <h1 class="mb-3">Registrati a THRIFT SHOP</h1>
+          <h1 class="mb-3 title-page">{{__('form.cta')}}</h1>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
                       <div class="d-flex justify-content-between">
                           <button type="submit" class="btn btn-primary btn_standard">{{__('navbar.registrati')}}</button>
                         <p class="pt-2">
-                          Sei già registrato? 
+                          {{__('form.registered?')}}
                           <a href="{{route('login')}}"> {{__('navbar.accedi')}}</a>
                         </p>
                     </div>

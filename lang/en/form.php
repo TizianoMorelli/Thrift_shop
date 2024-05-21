@@ -6,10 +6,13 @@ return [
     'subtitle' => 'Subtitle',
     'body' => 'Body of announcement',
     'category' => 'Category',
-    'img' => 'Add image',
+    'img' => 'Add images (MAX 5MB)',
     'price' => 'Price',
     'name' => 'Name',
     'confirm' => 'Confirm password',
-    'create' => 'Create announcement'
-
+    'create' => 'Create announcement',
+    'registered?' => 'Already registered?',
+    'cta' => 'Register on THRIFT SHOP',
+    'loginmessage' => 'Login to add new announcements',
+    'logintitle' => 'Login to THRIFT SHOP'
 ];
