@@ -17,4 +17,12 @@ return [
     'borsette' => 'Borse',
     'portafogli' => 'Portafogli',
     'ufficio' => 'Ufficio',
+
+    'Motori' => 'Motori',
+    'Immobili' => 'Immobili',
+    'Lavoro e Servizi' => 'Lavoro e Servizi',
+    'Elettronica' => 'Elettronica',
+    'Per la casa e la persona' => 'Per la casa e la persona',
+    'Sport e Hobby' => 'Sport e Hobby'
+
 ];
