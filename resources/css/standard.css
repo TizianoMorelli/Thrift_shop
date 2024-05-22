@@ -1,5 +1,5 @@
 .color-P{
-    color: var(--color-P);
+    color: var(--color-P) !important;
 }
 
 .btn_standard{

@@ -40,9 +40,9 @@
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                             <li>
-                                <a class="dropdown-item d-flex justify-content-between"
+                                <a class="dropdown-item d-flex justify-content-between color-P"
                                     href="{{ route('category.index', compact('category')) }}">{{ __('navbar.' . $category->name) }}
-                                    <span>
+                                    <span class="color-P">
                                         {{ $category->announcements->where('is_accepted', true)->count() }}
                                     </span>
 
@@ -86,7 +86,7 @@
                         <li class="nav-item dropdown end-0">
                             <a class="nav-link dropdown-toggle dropdown-toggle2" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <button class="btn transition_03"><i class="bi fs-4 bi-person-circle"></i></button>
+                                <button class="btn transition_03 "><i class="bi fs-4 bi-person-circle color-P"></i></button>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 @guest
@@ -143,7 +143,7 @@
                 <li class="nav-item dropdown end-0">
                     <a class="nav-link dropdown-toggle dropdown-toggle2" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <button class="btn transition_03"><i class="bi fs-4 bi-person-circle"></i></button>
+                        <button class="btn transition_03"><i class="bi fs-4 bi-person-circle color-P"></i></button>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         @guest

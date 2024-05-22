@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="flex-sm-row mt-3 px-5">
+        <div class="flex-sm-row mt-3 px-5 color-P">
             <p>© 2024 THRIFT SHOP, Inc. All rights reserved.</p>
         </div>
 
