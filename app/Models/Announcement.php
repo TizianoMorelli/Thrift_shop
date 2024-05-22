@@ -11,7 +11,6 @@ class Announcement extends Model
     use HasFactory, Searchable;
 
     protected $fillable = [
-
         'title',
         'subtitle',
         'body',
@@ -19,7 +18,6 @@ class Announcement extends Model
         'price',
         'category_id',
         'is_accepted'
-
     ];
 
     /**
