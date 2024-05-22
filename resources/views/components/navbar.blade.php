@@ -50,9 +50,9 @@
                 </li>
 
                 {{-- ! dropdown categorie md --}}
-                <div class="container d-lg-none">
+                
 
-                    <div class="row justify-content-start mb-3 mt-2">
+                    <div class="row justify-content-start mb-3 mt-2 mx-2 d-lg-none">
                         <li class="nav-item color-P col_category pb-2 fw-bold">
                             Categorie
                         </li>
@@ -70,7 +70,7 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
+            
 
                 {{-- ? Sezione Navbar schermi piccoli --}}
                 <div class="d-lg-none">
