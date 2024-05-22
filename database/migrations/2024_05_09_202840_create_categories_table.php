@@ -17,8 +17,18 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
         });
+        // ['giocattoli', 'accessori', 'vestiti', 'borsette', 'portafogli', 'ufficio'];
 
-       $categories = ['giocattoli', 'accessori', 'vestiti', 'borsette', 'portafogli', 'ufficio'];
+       $categories = [
+         "Motori",
+         "Immobili",
+         "Lavoro e Servizi",
+         "Elettronica",
+         "Per la casa e la persona",
+         "Sport e Hobby"
+        ];
+
+    
 
         foreach ($categories as $category) {
             Category::create([
