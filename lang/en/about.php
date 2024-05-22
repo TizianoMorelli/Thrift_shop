@@ -23,15 +23,17 @@ return [
 
     'abouttitle' => 'Our company',
 
-    'about1' => 'Founded in 1824, ThriftShop was born with the aim of revolutionizing the way people buy and sell goods and services online. Starting as a small startup with an ambitious vision, we have worked tirelessly to build a platform that is intuitive, secure, and accessible to all.',
+    'jobtitle' => 'Do work that matters',
 
-    'about2' => 'Over the years, we have expanded our services to cover a wide range of categories, from consumer goods to professional services, making it easier for users to find exactly what they need. Thanks to our constant commitment to quality and reliability, we have become one of the leading online advertising sites, with millions of active users every month.',
+    'about1' => 'Founded in 2024, ThriftShop was born with the aim of revolutionizing the way people buy and sell goods and services online. Starting as a small startup with an ambitious vision, we have worked tirelessly to build a platform that is intuitive, secure, and accessible to all.',
 
-    'about3' => 'Our success is built on the trust our users place in us. To ensure that each ad meets our quality standards, we have introduced a rigorous review process. Every day, a dedicated team of reviewers examines submitted ads to ensure they meet our guidelines, thus offering a safe and enjoyable experience for everyone.',
+    'about2' => 'We aim to make second-hand the first choice. Currently, the fashion industry is responsible for up to 10% of global CO2 emissions, but large-scale clothing recycling can reduce the retail fashion\'s climate impact. With your support, we can lower this footprint.',
 
-    'about4' => 'In addition to providing an advertising platform, we are committed to constantly innovating, improving existing features, and introducing new features that meet the needs of our users. We are proud to create a vibrant community where people from all over the world can connect, do business, and grow together.',
+    // 'about3' => 'Our success is built on the trust our users place in us. To ensure that each ad meets our quality standards, we have introduced a rigorous review process. Every day, a dedicated team of reviewers examines submitted ads to ensure they meet our guidelines, thus offering a safe and enjoyable experience for everyone.',
 
-    'about5' => 'At ThriftShop, we believe in the power of sharing and collaboration. Our history is made up of thousands of success stories from our users, and every day we work to write a new chapter in this adventure. Join us and discover what makes ThriftShop the preferred choice for online advertising.',
+    // 'about4' => 'In addition to providing an advertising platform, we are committed to constantly innovating, improving existing features, and introducing new features that meet the needs of our users. We are proud to create a vibrant community where people from all over the world can connect, do business, and grow together.',
+
+    // 'about5' => 'At ThriftShop, we believe in the power of sharing and collaboration. Our history is made up of thousands of success stories from our users, and every day we work to write a new chapter in this adventure. Join us and discover what makes ThriftShop the preferred choice for online advertising.',
 
 ];
 
