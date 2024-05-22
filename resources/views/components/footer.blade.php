@@ -8,9 +8,9 @@
                     <li class="nav-item mb-2">
                         <a href="{{ route('workWithUs') }}" class="nav-link p-0 text-body-secondary">{{__('footer.work')}}</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">{{__('footer.pricing')}}</a>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary"
+                        href="{{ route('announcement.index') }}">{{ __('navbar.annunci') }}</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
                     <li class="nav-item mb-2"><a href="{{ route('workWithUs') }}#about"
                             class="nav-link p-0 text-body-secondary">{{__('footer.about')}}</a></li>
                 </ul>

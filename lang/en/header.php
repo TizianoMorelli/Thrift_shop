@@ -2,6 +2,6 @@
 
 return [
 
-    'cta' => 'It\'s time to clean the closet!',
+    'cta' => 'Every object has a second life, promote sustainability',
     'button' => 'Sell now!'
 ];
