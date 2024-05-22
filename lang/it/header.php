@@ -2,7 +2,7 @@
 
 return [
 
-    'cta' => 'È arrivato il momento di liberare l’armadio!',
+    'cta' => 'Ogni oggetto ha una seconda vita. Unisciti alla comunità che crede nel riuso!',
     'button' => 'Vendi subito!'
 
 ];

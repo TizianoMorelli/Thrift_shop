@@ -1,3 +1,7 @@
+.color-P{
+    color: var(--color-P);
+}
+
 .btn_standard{
     color: white ;
     background-color: var(--color-A) ;
@@ -19,6 +23,7 @@
 
 .title-page{
     position: relative;
+    color: var(--color-P);
 }
 
 .title-page::before{

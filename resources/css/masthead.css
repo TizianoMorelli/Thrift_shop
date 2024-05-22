@@ -13,8 +13,8 @@
 
 .title-masthead{
   position: relative;
-  
 }
+
 .title-masthead::before{
   content: "";
   position: absolute;
