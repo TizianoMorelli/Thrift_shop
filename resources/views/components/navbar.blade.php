@@ -25,24 +25,17 @@
                         href="{{ route('announcement.create') }}">{{ __('navbar.crea') }}</a>
                 </li>
 
-
-
-
-
-
-
-
                 <li class="nav-item dropdown">
                     <a class="nav-link transition_03 dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('navbar.categorie') }}
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown_lang">
                         @foreach ($categories as $category)
                             <li>
                                 <a class="dropdown-item d-flex justify-content-between color-P"
                                     href="{{ route('category.index', compact('category')) }}">{{ __('navbar.' . $category->name) }}
-                                    <span class="color-P">
+                                    <span class="color-P px-3">
                                         {{ $category->announcements->where('is_accepted', true)->count() }}
                                     </span>
 
@@ -52,8 +45,6 @@
 
                     </ul>
                 </li>
-
-
 
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
@@ -86,7 +77,8 @@
                         <li class="nav-item dropdown end-0">
                             <a class="nav-link dropdown-toggle dropdown-toggle2" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <button class="btn transition_03 "><i class="bi fs-4 bi-person-circle color-P"></i></button>
+                                <button class="btn transition_03 "><i
+                                        class="bi fs-4 bi-person-circle color-P"></i></button>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 @guest
@@ -96,6 +88,16 @@
                                     </li>
                                 @endguest
                                 @auth
+                                    <li class="nav-item  ">
+                                        @if (Auth::user() && Auth::user()->is_revisor)
+                                            <a href="{{ route('revisor.home') }}" class="dropdown-item position-relative">
+                                                Revisor
+                                                <span class="mx-1">
+                                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                                </span>
+                                            </a>
+                                        @endif
+                                    </li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -105,15 +107,12 @@
                                     </li>
                                 @endauth
                         </li>
-
                     </ul>
-                    </li>
+                </div>
 
             </ul>
         </div>
-        </ul>
     </div>
-
 
     <div class="d-none d-lg-block">
         <div>
@@ -172,11 +171,8 @@
                                 </form>
                             </li>
                         @endauth
+                    </ul>
                 </li>
-
-            </ul>
-            </li>
-
             </ul>
         </div>
     </div>
