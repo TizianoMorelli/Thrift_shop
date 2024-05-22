@@ -310,3 +310,5 @@ Ricerca multi-parametro
 SEEDER
 email: admin@thriftshop.it
 password: 12345678
+
+The Last Commit - Grazie Ragazzi!
