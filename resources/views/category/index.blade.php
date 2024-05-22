@@ -3,7 +3,7 @@
         <div class="row justify-content-center ">
             <div class="col-12 d-flex justify-content-center">
                 <h2 class="text-center title-page">
-                    {{ $category ? 'Ecco gli annunci per la categoria: ' . ucfirst($category->name) : 'Non ci sono annunci revisionati' }}
+                    {{ $category ? 'Annunci in ' . ucfirst($category->name) : 'Non ci sono annunci revisionati' }}
                 </h2>
             </div>
         </div>

@@ -24,7 +24,7 @@ return new class extends Migration
          "Immobili",
          "Lavoro e Servizi",
          "Elettronica",
-         "Per la casa e la persona",
+         "Casa e Persona",
          "Sport e Hobby"
         ];
 

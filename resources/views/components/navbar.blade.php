@@ -58,12 +58,12 @@
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <div class="dropdown mt-2">
+                            <div class="btn-group dropend">
                                 <button class="btn btn_standard dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-translate"></i>
                                 </button>
-                                <ul class="dropdown-menu dropdown_lang">
+                                <ul class="dropdown-menu dropdown_lang ">
                                     <li class="dropdown-item">
                                         <x-_locale class="w-25" lang="es" />
 
@@ -74,7 +74,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item w-50 my-3">
+                        <li class="nav-item w-100 my-3">
                             <form action="{{ route('announcement.search') }}" method="GET" class="d-flex"
                                 role="search">
                                 <button class="btn me-2 btn-outline-success btn_standard"
@@ -113,6 +113,8 @@
         </div>
         </ul>
     </div>
+
+
     <div class="d-none d-lg-block">
         <div>
             <ul class="navbar-nav justify-content-end d-flex">
