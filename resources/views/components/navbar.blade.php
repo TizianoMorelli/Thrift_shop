@@ -31,7 +31,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('navbar.categorie') }}
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropmenu_custom" id="dropmenu_custom">
                         @foreach ($categories as $category)
                             <li>
                                 <a class="dropdown-item d-flex justify-content-between color-P"
