@@ -15,5 +15,6 @@ return [
     'cta' => 'Register on THRIFT SHOP',
     'loginmessage' => 'Login to add new announcements',
     'logintitle' => 'Login to THRIFT SHOP',
-    'loading' => 'Loading in progress...'
+    'loading' => 'Loading in progress...',
+    'announcementCreated' => 'The announcement is uploaded and will be published after the revision'
 ];

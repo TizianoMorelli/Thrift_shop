@@ -72,11 +72,11 @@
                                 
                                 <p>Anteprima immagini caricate</p>
                                 <div class="container">
-                                    <div class="row d-flex justify-content-center justify-content-lg-between">
+                                    <div class="row d-flex justify-content-center">
                                         @foreach ($images as $key => $image)
-                                        <div class="col-12 col-lg-6 col-xl-3 col-xxl-2 my-3 d-flex justify-content-center ">
+                                        <div class="col-12 col-lg-6 col-xl-4 col-xxl-3 my-3 d-flex justify-content-center ">
                                             <div class="position-relative">
-                                                <img src="{{ $image->temporaryUrl() }}" alt="Immagine caricata" width="200px" >
+                                                <img src="{{ $image->temporaryUrl() }}" alt="Immagine caricata" width="100px" >
                                                 <button wire:click="removeImage({{ $key }})" class="rounded_circle position-absolute" type="button"><i class="bi bi-x fs-1"></i></button>
                                             </div>
                                             

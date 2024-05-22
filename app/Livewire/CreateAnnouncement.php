@@ -110,7 +110,7 @@ class CreateAnnouncement extends Component
 
             $this->reset();
 
-            session()->flash('message', 'Articolo creato correttamente');
+            session()->flash('message', __('form.announcementCreated'));
         }
     }
 
