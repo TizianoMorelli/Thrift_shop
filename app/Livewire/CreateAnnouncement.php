@@ -45,17 +45,15 @@ class CreateAnnouncement extends Component
     #[Validate(['temporary_images.*' => ['image', 'max:5000']], message: ['temporary_images.*.max' => 'Una delle immagini caricate supera i 5MB', 'temporary_images.*' => 'Uno dei file caricati non è un immagine'])]
     public $temporary_images = [];
 
-
     public $img;
-
 
     public function updatedTemporaryImages()
     {
         if ($this->validateOnly('temporary_images.*')) {
-
+            
             foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
-            }
+            }                        
         }
     }
 
