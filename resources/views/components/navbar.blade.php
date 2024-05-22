@@ -25,14 +25,8 @@
                         href="{{ route('announcement.create') }}">{{ __('navbar.crea') }}</a>
                 </li>
 
-
-
-
-
-
-
-
-                <li class="nav-item dropdown">
+                {{--! dropdown categorie lg--}}
+                <li class="nav-item dropdown-center d-none d-lg-block">
                     <a class="nav-link transition_03 dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('navbar.categorie') }}
@@ -42,29 +36,48 @@
                             <li>
                                 <a class="dropdown-item d-flex justify-content-between color-P"
                                     href="{{ route('category.index', compact('category')) }}">{{ __('navbar.' . $category->name) }}
-                                    <span class="color-P">
+                                    <span class="color-P px-3">
                                         {{ $category->announcements->where('is_accepted', true)->count() }}
                                     </span>
 
                                 </a>
                             </li>
                         @endforeach
-
                     </ul>
                 </li>
 
+                     {{--! categorie md--}}
 
+                    <div class="container d-lg-none">
+                       
+                        <div class="row justify-content-start my-3 ">
+                       
+                            @foreach ($categories as $category)
+                            <div class="col-7 d-flex justify-content-start align-items-center  ps-3  py-2 col_category">
+                                <a class="dropdown-item d-flex justify-content-between  color-P"
+                                href="{{ route('category.index', compact('category')) }}">
+                              
+                                {{ __('navbar.' . $category->name) }}
+                                <span class="color-P">
+                                    {{ $category->announcements->where('is_accepted', true)->count() }}
+                                </span>
+
+                            </a>
+                            </div>
+                            @endforeach
+                        </div>
+                      </div>
 
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <div class="dropdown mt-2">
+                            <div class="btn-group dropend">
                                 <button class="btn btn_standard dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-translate"></i>
                                 </button>
-                                <ul class="dropdown-menu dropdown_lang">
-                                    <li class="dropdown-item">
+                                <ul class="dropdown-menu dropdown_lang py-0">
+                                    <li class="dropdown-item py-0">
                                         <x-_locale class="w-25" lang="es" />
 
                                         <x-_locale class="w-25" lang="it" />
@@ -74,7 +87,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item w-50 my-3">
+                        <li class="nav-item w-100 my-3">
                             <form action="{{ route('announcement.search') }}" method="GET" class="d-flex"
                                 role="search">
                                 <button class="btn me-2 btn-outline-success btn_standard"
@@ -86,8 +99,12 @@
                         <li class="nav-item dropdown end-0">
                             <a class="nav-link dropdown-toggle dropdown-toggle2" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <button class="btn transition_03 "><i class="bi fs-4 bi-person-circle color-P"></i></button>
+                                <button class="btn transition_03 "><i
+                                        class="bi fs-4 bi-person-circle color-P"></i></button>
                             </a>
+
+
+                            
                             <ul class="dropdown-menu dropdown-menu-end">
                                 @guest
                                     <li><a class=" dropdown-item"
@@ -96,6 +113,16 @@
                                     </li>
                                 @endguest
                                 @auth
+                                    <li class="nav-item  ">
+                                        @if (Auth::user() && Auth::user()->is_revisor)
+                                            <a href="{{ route('revisor.home') }}" class="dropdown-item position-relative">
+                                                Revisor
+                                                <span class="mx-1">
+                                                    {{ App\Models\Announcement::toBeRevisionedCount() }}
+                                                </span>
+                                            </a>
+                                        @endif
+                                    </li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -105,14 +132,13 @@
                                     </li>
                                 @endauth
                         </li>
-
                     </ul>
-                    </li>
+                </div>
 
             </ul>
         </div>
-        </ul>
     </div>
+
     <div class="d-none d-lg-block">
         <div>
             <ul class="navbar-nav justify-content-end d-flex">
@@ -122,8 +148,8 @@
                             aria-expanded="false">
                             <i class="bi bi-translate"></i>
                         </button>
-                        <ul class="dropdown-menu p-0  dropdown_lang ">
-                            <li class=" dropdown-item py-0">
+                        <ul class="dropdown-menu p-0 dropdown_lang mx-0">
+                            <li class="dropdown-item py-0 d-flex justify-content-evenly px-0 ">
                                 <x-_locale class="w-25" lang="es" />
 
                                 <x-_locale class="w-25" lang="it" />
@@ -133,7 +159,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item align-items-center d-flex   ps-lg-2 my-2 my-md-0">
+                <li class="nav-item align-items-center d-flex ps-lg-2 my-2 my-md-0">
                     <button type="button" class="btn btn_standard" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                         <i class="bi bi-search"></i>
@@ -170,11 +196,8 @@
                                 </form>
                             </li>
                         @endauth
+                    </ul>
                 </li>
-
-            </ul>
-            </li>
-
             </ul>
         </div>
     </div>

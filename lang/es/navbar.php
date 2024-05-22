@@ -22,7 +22,7 @@ return [
     'Immobili' => 'Bienes Raíces',
     'Lavoro e Servizi' => 'Empleo y Servicios',
     'Elettronica' => 'Electrónica',
-    'Per la casa e la persona' => 'Para el Hogar y la Persona',
+    'Casa e Persona' => 'Casa y Persona',
     'Sport e Hobby' => 'Deportes y Pasatiempos'
 
 

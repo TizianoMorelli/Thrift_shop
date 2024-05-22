@@ -22,7 +22,7 @@ return [
     'Immobili' => 'Real Estate',
     'Lavoro e Servizi' => 'Jobs and Services',
     'Elettronica' => 'Electronics',
-    'Per la casa e la persona' => 'Home and Personal Care',
+    'Casa e Persona' => 'Home and Personal Care',
     'Sport e Hobby' => 'Sports and Hobbies'
 
 ];
