@@ -57,7 +57,7 @@
                             class="form-control form-control-sm input_focused @error('temporary_images.*') is-invalid @enderror"
                             type="file" multiple wire:model="temporary_images">
                             <div class="d-flex justify-content-center ">
-                                <div wire:loading wire:target="temporary_images" class="alert alert-info my-2">Caricamento in corso...</div>
+                                <div wire:loading wire:target="temporary_images" class="alert alert-info my-2">{{__('form.loading')}}</div>
                             </div>
                             <div class="text-danger fw-bold ">
                                 @error('temporary_images.*')

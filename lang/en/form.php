@@ -14,5 +14,6 @@ return [
     'registered?' => 'Already registered?',
     'cta' => 'Register on THRIFT SHOP',
     'loginmessage' => 'Login to add new announcements',
-    'logintitle' => 'Login to THRIFT SHOP'
+    'logintitle' => 'Login to THRIFT SHOP',
+    'loading' => 'Loading in progress...'
 ];

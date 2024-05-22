@@ -14,6 +14,7 @@ return [
     'registered?' => 'Sei già registrato?',
     'cta' => 'Registrati su THRIFT SHOP',
     'loginmessage' => 'Accedi per pubblicare nuovi annunci',
-    'logintitle' => 'Accedi a THRIFT SHOP'
+    'logintitle' => 'Accedi a THRIFT SHOP',
+    'loading' => 'Caricamento in corso...'
 
 ];
