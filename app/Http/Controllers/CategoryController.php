@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -11,9 +12,11 @@ class CategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index(Category $category)
-    {
-        return view('category.index', compact('category'));
-    }
+{
+    $announcements = $category->announcements()->where('is_accepted', true)->orderByDesc('created_at')->get();
+    return view('category.index', compact('category', 'announcements'));
+}
+
 
     /**
      * Show the form for creating a new resource.

@@ -10,7 +10,7 @@
     </div>
     <div class="container my-5 box-category">
         <div class="row d-flex justify-content-center p-5">
-            @forelse ($category->announcements as $announcement)
+            @forelse ($announcements as $announcement)
                 <div class="col-10 col-sm-8 col-md-5 col-lg-4 col-xl-3 col-xxl-2 m-xl-3 my-4">
                     <x-card :$announcement />
                 </div>
