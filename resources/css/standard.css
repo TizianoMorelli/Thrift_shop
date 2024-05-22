@@ -125,6 +125,12 @@
 }
 
 
+.col_category{
+
+    border-left: 3px solid var(--color-A) !important;
+
+}
+
 @media screen and (max-width:992px) {
 
     .padding {

@@ -25,12 +25,13 @@
                         href="{{ route('announcement.create') }}">{{ __('navbar.crea') }}</a>
                 </li>
 
-                <li class="nav-item dropdown">
+                {{--! dropdown categorie lg--}}
+                <li class="nav-item dropdown-center d-none d-lg-block">
                     <a class="nav-link transition_03 dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         {{ __('navbar.categorie') }}
                     </a>
-                    <ul class="dropdown-menu dropdown_lang">
+                    <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                             <li>
                                 <a class="dropdown-item d-flex justify-content-between color-P"
@@ -44,6 +45,28 @@
                         @endforeach
                     </ul>
                 </li>
+
+                     {{--! categorie md--}}
+
+                    <div class="container d-lg-none">
+                       
+                        <div class="row justify-content-start my-3 ">
+                       
+                            @foreach ($categories as $category)
+                            <div class="col-7 d-flex justify-content-start align-items-center  ps-3  py-2 col_category">
+                                <a class="dropdown-item d-flex justify-content-between  color-P"
+                                href="{{ route('category.index', compact('category')) }}">
+                              
+                                {{ __('navbar.' . $category->name) }}
+                                <span class="color-P">
+                                    {{ $category->announcements->where('is_accepted', true)->count() }}
+                                </span>
+
+                            </a>
+                            </div>
+                            @endforeach
+                        </div>
+                      </div>
 
                 <div class="d-lg-none">
                     <ul class="navbar-nav">
@@ -79,6 +102,9 @@
                                 <button class="btn transition_03 "><i
                                         class="bi fs-4 bi-person-circle color-P"></i></button>
                             </a>
+
+
+                            
                             <ul class="dropdown-menu dropdown-menu-end">
                                 @guest
                                     <li><a class=" dropdown-item"
