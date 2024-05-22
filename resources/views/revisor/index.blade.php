@@ -5,12 +5,12 @@
 
 
     <div class="container">
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-12 mt-5">
                 @if ($announcement_to_check)
-                    <h1 class="text-center title-page mb-5">Ecco gli annunci da revisionare</h1>
+                    <h1 class="text-center d-flex justify-content-center title-page mb-5">Ecco gli annunci da revisionare</h1>
                 @else
-                    <h1 class="text-center title-page mb-5">Non ci sono annunci da revisionare</h1>
+                    <h1 class="text-center d-flex justify-content-center title-page mb-5">Non ci sono annunci da revisionare</h1>
                 @endif
             </div>
         </div>
