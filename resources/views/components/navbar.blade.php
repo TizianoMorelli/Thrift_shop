@@ -53,8 +53,8 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="bi bi-translate"></i>
                                 </button>
-                                <ul class="dropdown-menu dropdown_lang ">
-                                    <li class="dropdown-item">
+                                <ul class="dropdown-menu dropdown_lang py-0">
+                                    <li class="dropdown-item py-0">
                                         <x-_locale class="w-25" lang="es" />
 
                                         <x-_locale class="w-25" lang="it" />
@@ -122,8 +122,8 @@
                             aria-expanded="false">
                             <i class="bi bi-translate"></i>
                         </button>
-                        <ul class="dropdown-menu p-0  dropdown_lang ">
-                            <li class=" dropdown-item py-0">
+                        <ul class="dropdown-menu p-0 dropdown_lang mx-0">
+                            <li class="dropdown-item py-0 d-flex justify-content-evenly px-0 ">
                                 <x-_locale class="w-25" lang="es" />
 
                                 <x-_locale class="w-25" lang="it" />
@@ -133,7 +133,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item align-items-center d-flex   ps-lg-2 my-2 my-md-0">
+                <li class="nav-item align-items-center d-flex ps-lg-2 my-2 my-md-0">
                     <button type="button" class="btn btn_standard" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
                         <i class="bi bi-search"></i>
