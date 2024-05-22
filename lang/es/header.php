@@ -2,7 +2,7 @@
 
 return [
 
-    'cta' => '¡Es hora de limpiar el armario!',
+    'cta' => 'Cada objeto tiene una segunda vida, promueve la sostenibilidad.',
     'button' => '¡Vende ahora!'
 
 ];
