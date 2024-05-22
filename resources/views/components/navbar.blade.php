@@ -111,12 +111,12 @@
     <div>
         <ul class="navbar-nav justify-content-end d-flex">
             <li class="nav-item align-items-center d-flex my-md-0">
-                <div class="dropdown">
+                <div class="btn-group dropstart">
                     <button class="btn btn_standard dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-translate"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown_lang ">
-                        <li class=" dropdown-item">
+                    <ul class="dropdown-menu p-0  dropdown_lang ">
+                        <li class=" dropdown-item py-0">
                             <x-_locale class="w-25" lang="es"/>
                         
                             <x-_locale class="w-25" lang="it"/>
